@@ -52,6 +52,8 @@ extern "C" {
 
 void Tmr0_Init(void);
 
+void Tmr1_Init(void);
+
 #endif /* FW_Timer_H */
 
 

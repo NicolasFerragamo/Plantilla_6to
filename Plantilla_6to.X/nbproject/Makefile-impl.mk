@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Plantilla_5to.X
+PROJECTNAME=Plantilla_6to.X
 
 # Active Configuration
 DEFAULTCONF=default

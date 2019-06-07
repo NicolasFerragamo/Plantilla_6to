@@ -60,7 +60,7 @@
  *  \param      [out] void
  *	\return           void
 */
-void Tmr0_Init()
+void Tmr0_Init(void)
 {
     T0CONbits.TMR0ON  = 0;      /* apago el timer */
     T0CONbits.T08BIT  = 1;      /* selecciono el timer en 8 bits */
@@ -72,4 +72,33 @@ void Tmr0_Init()
     TMR0L             = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
     TMR0H             = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
     INTCONbits.TMR0IE = 1;      /* Habilita la interrupción de timer 0 */
+}
+
+/**
+ *	\fn         Tmr1_Init
+ *	\brief      Inicializacion del Tmr1
+ *  \details    Inicializa el timer 0 en 8 bits, con el prescaler en 256 y con 
+ *              la interrupcion activada. Esta configurado para que interrumpa
+ *              cada 99,96 uS
+ *  \author I   Esteban Lemos
+ *	\date  
+ *	\param      [in]  void
+ *  \param      [out] void
+ *	\return           void
+*/
+void Tmr1_Init(void)
+{
+    T1CONbits.TMR1ON  = 0;     /*apago el timer */
+    T1CONbits.TMR1CS  = 0;     /*el timer cuenta fosc/4 */
+    T1CONbits.nT1SYNC = 1;     /*Timer no sincronizado en forma externa */
+    T1CONbits.T1OSCEN = 0;     /*T1OS shut off */
+    T1CONbits.T1CKPS  = 0;     /*Preescaler en 1 */
+    T1CONbits.RD16    = 0;     /*LEctura en dos pasos de 8 bits */
+    T1CONbits.T1RUN   = 0;     /*Reloj interno del micro desde otra fuente */
+    TMR1L             = 0x4F;  /*el timer contará 1200 fosc/4 * 1 = 12032 * 0,0833us */
+    TMR1H	          = 0xFB;  /*en total aprox 99.96us  casi 100us */
+    PIR1bits.TMR1IF   = 0;     /*flag de interrupción borrado */
+    PIE1bits.TMR1IE   = 1;     /*interrupción de timer 1 habilitada */
+    INTCONbits.PEIE   = 1;     /*Interrupciones de perifericos habilitadas */
+    
 }

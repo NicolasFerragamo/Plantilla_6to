@@ -11,6 +11,7 @@
 ****************************************************************************************************/
 #include <xc.h>
 #include "confbits.h"
+#include "Tdatos.h"
 #include "FW_InitKit.h"
 #include "FW_InitTimer.h"   //no se debe de modificar este archivo para
                         //garantizar el funcionamiento del BOOTLOADER
@@ -65,7 +66,7 @@ void main (void)
     
     while (1)
     {   
-    
+      
     }
 }
 
