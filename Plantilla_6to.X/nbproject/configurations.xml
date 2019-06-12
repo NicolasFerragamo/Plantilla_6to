@@ -9,6 +9,7 @@
         <itemPath>inc/FW_InitTimer.h</itemPath>
         <itemPath>inc/confbits.h</itemPath>
         <itemPath>inc/Tdatos.h</itemPath>
+        <itemPath>inc/LCD.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -30,8 +31,10 @@
                      projectFiles="true">
         <itemPath>Firmware_Init/FW_InitTimer.c</itemPath>
         <itemPath>Firmware_Init/FW_InitKit.c</itemPath>
+        <itemPath>Firmware_Init/FW_InitLCD.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Primitivas" displayName="Primitivas" projectFiles="true">
+        <itemPath>Primitivas/PR_LCD.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

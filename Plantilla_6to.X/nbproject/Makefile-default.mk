@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c Firmware_Init/FW_InitLCD.c Primitivas/PR_LCD.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/main.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d ${OBJECTDIR}/Primitivas/PR_LCD.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1
+OBJECTFILES=${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1
 
 # Source Files
-SOURCEFILES=Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c
+SOURCEFILES=Firmware_Driver/FW_Interrupt.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c main.c Firmware_Init/FW_InitLCD.c Primitivas/PR_LCD.c
 
 
 CFLAGS=
@@ -125,6 +125,22 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1: Firmware_Init/FW_InitLCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 Firmware_Init/FW_InitLCD.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.d ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_LCD.p1: Primitivas/PR_LCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_LCD.p1 Primitivas/PR_LCD.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_LCD.d ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1: Firmware_Driver/FW_Interrupt.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
@@ -157,6 +173,22 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1: Firmware_Init/FW_InitLCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 Firmware_Init/FW_InitLCD.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.d ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_LCD.p1: Primitivas/PR_LCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_LCD.p1 Primitivas/PR_LCD.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_LCD.d ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -31,7 +31,7 @@ extern "C" {
 ****************************************************************************************************/
 #define __SHIELD1  1    //!< Selecciono el shield 1
 #define __SHIELD2  2    //!< Selecciono el shield 2 
-#define SHIELD_ACTIVO __SHIELD1
+#define SHIELD_ACTIVO __SHIELD1 //!< seleciona el shield activo
 
 #if SHIELD_ACTIVO == __SHIELD1
 
@@ -56,7 +56,7 @@ extern "C" {
 #define DISP4   LATEbits.LE1
 #define DOT     LATEbits.LE2
 
-#define PULSADORES  (PORTD^0xF0)&0xF0    //!<Nibble superior del puertoD
+#define Init_Kit_PULSADORES  (PORTD^0xF0)&0xF0    //!<Nibble superior del puerto D
 
 #elif SHIELD_ACTIVO == __SHIELD2
 
@@ -68,7 +68,7 @@ extern "C" {
 #define BOT3    PORTBbits.RB6
 #define BOT4    PORTBbits.RB7
 #define BOOT    PORTBbits.RB4
-#define PULSADORES  (PORTB^0xF0)&0xF0
+#define Init_Kit_PULSADORES  (PORTB^0xF0)&0xF0
 
 /********************* Definiciones de los Displays LCD **********************/
 #define DISPLAY LATD
