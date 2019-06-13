@@ -37,8 +37,8 @@
  *** MODULO
 *********************************************************************************************************/
 
-#ifndef __LCD_H
-#define __LCD_H
+#ifndef PR_LCD_H
+#define PR_LCD_H
 
 /*********************************************************************************************************
  *** INCLUDES GLOBALES
@@ -51,14 +51,14 @@
  *** DEFINES GLOBALES
 *********************************************************************************************************/
 
-#define     RS			PORTEbits.RE2
-#define     RS_BUS_DIR  TRISEbits.RE2
-#define     RW			PORTEbits.RE1
-#define     RW_BUS_DIR  TRISEbits.RE1
-#define     E			PORTEbits.RE0
-#define     E_BUS_DIR   TRISEbits.RE0
+#define     LCD_RS			PORTEbits.RE2
+#define     LCD_RS_BUS_DIR  TRISEbits.RE2
+#define     LCD_RW			PORTEbits.RE1
+#define     LCD_RW_BUS_DIR  TRISEbits.RE1
+#define     LCD_E			PORTEbits.RE0
+#define     LCD_E_BUS_DIR   TRISEbits.RE0
 
-#define     DISPLAY     LATD	//!< define el puerto dnde esta conectado el bus
+#define     LCD_DISPLAY     LATD	//!< define el puerto dnde esta conectado el bus
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
@@ -80,7 +80,6 @@
  *  ej  void Clk_DateTimer(paraetros)
 **********************************************************************************************************/
 
-void LCD_Init (void);
 void LCD_Char2LCD (uint8_t caracter);
 void LCD_Msg2LCD (const uint8_t* msg);    
 void LCD_Clear (void);	
@@ -89,4 +88,4 @@ void LCD_SetCursor (uint8_t pos);
 void LCD_TicLCD (void);                
 void LCD_Desp2Izq (void);
 
-#endif /* __LCD_H */
+#endif /* PR_LCD_H */

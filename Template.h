@@ -78,4 +78,4 @@
  *  ej  void Clk_DateTimer(paraetros)
 **********************************************************************************************************/
 
-#endif /* ${include_guard_symbol} 
+#endif /* ${include_guard_symbol} */

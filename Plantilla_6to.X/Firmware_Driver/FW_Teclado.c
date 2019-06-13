@@ -1,10 +1,10 @@
 /*********************************************************************************************************
-*                                               LCD
-*                               Manejo del display LCD
+*                                                Teclado
+*               			Módulo encargado del manejo del teclado
 *
-*                                   <Copyright>
+*						<Copyright>
 *
-*                               <Copyright or distribution terms>
+*						<Copyright or distribution terms>
 *
 *
 *********************************************************************************************************/
@@ -12,16 +12,12 @@
 /*********************************************************************************************************
 *                                               <File description>
 *
-* Filename	: PR_LCD
+* Filename	: FW_Teclado.c
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Esta librería solo puede utilizar las cuatro líneas menos significativas de 
-*   un puerto en caso de querer utilizar otras líneas se debe de reprogramar.
-*   Es necesarío este habilitada la interrupción de timer en la cual se debe de 
-*   llamar a la función LCD_tic() la misma establece las demoras que de otra
-*   manera habría que implementarlas como una función aparte. No olvide declarar 
-*   la variable extern uint8_t LCD_Tout en el archivo FW__Interrupt.c
+*  Note(s):  Para poder usarla debe llamar llamar a la función void tic_teclado(void); en la interrupción 
+*  del timer configutrado a 1mS.
 *
 *
 *
@@ -29,9 +25,9 @@
 
 /*********************************************************************************************************
  *
- * \file		PR_LCD
- * \brief		Archivo con la función para el manejo del Display LCD
- * \date		11 de junio del 2019
+ * \file		FW_Teclado.c
+ * \brief		Módulo encargado del manejo del teclado, contiene los drivers necesarios
+ * \date		13 de junio de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -40,7 +36,7 @@
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "FW_LCD.h"
+#include "FW_Teclado.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -61,15 +57,16 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
-extern volatile uint8_t LCD_Tout;
-
+extern volatile uint8_t TDO_fila; 
+extern volatile uint8_t TDO_col;// Aquí guardará indice de matriz
+extern volatile uint8_t TDO_flag_kb;
+extern volatile uint8_t TDO_delay_kb;// Modificadas por hardware (interrupciones)
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
-
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -80,98 +77,54 @@ extern volatile uint8_t LCD_Tout;
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
 
-/**
- *	\fn         void LCD_Char2LCD(uint8_t caracter)
- *	\brief      Envia un carater al LCD
+
+#if SHIELD_ACTIVO == __SHIELD2
+
+/** \fn         void TCDO_MarcaTecla (void)
+ *  \details    Funcion para uso de teclado la misma se incluye en la interrupción      
+ *              de teclado. La misma pone un estado alto el flag que indica el 
+ *              evento de teclado para otros micros o placas
  *	\author     Esteban Lemos
  *	\date 
- *  \param      [in]  caracter 
 */
-void LCD_Char2LCD (uint8_t caracter)
+void TDO_MarcaTecla (void)			// Usada para indicar que se presionó tecla
 {
-    LCD_WriteData (caracter);
-	LCD_ReadBusy();
+    (void) PORTB;            //Lee el puerto pero no efectua ninguna acción
+    asm( "NOP");
+    asm ("NOP");//Espera un ciclo sin hacer nada
+	TDO_flag_kb = TDO_TRUE;         //Guarda el evento en el flag
+    asm ("NOP");
+    asm ("NOP");//Espera un ciclo sin hacer nada    
 }
 
+/** \fn         void TDO_Tic (void);
+ *  \details    Función para el tratamiento del rebote se incluye en la interrupción     
+ *              del timer , que deberá estar configurado en 1ms un milisegundo.
+ *              La misma decrementa una variable que se encarga de definir los 
+ *              tiempos de estabilidad y así evitar el rebote.
+ *	\author     Esteban Lemos
+ *	\date 
+*/
 
-/**
- *	\fn         void LCD_Msg2LCD(const uint8_t* msg)
- *	\brief      Envia un string al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  msg
-*/
-void LCD_Msg2LCD (const uint8_t* msg)
-{
-    while (*msg != 0)
-    {
-		LCD_WriteData(*msg);
-		LCD_ReadBusy();
-		msg++;
-	}
-}
-   
-/**
- *	\fn         void LCD_Clear(void)
- *	\brief      Borra el LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  mensaje a enviar al LCD
-*/
-void LCD_Clear (void)
-{
-    LCD_WriteCMD (0x01);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_RetHome(void)
- *	\brief      Regresa el curor al inicio
+ void TDO_Tic (void)		// Para producir demora, debe llamarse  x int de timer cada 1mS
+ {
+     if (TDO_delay_kb) TDO_delay_kb--;
+ }
+ 
+ /** \fn        void TDO_LittleDelay (void)
+ *  \brief      demora breve
  *	\author     Esteban Lemos
  *	\date 
 */
-void LCD_RetHome (void)
-{
-    LCD_WriteCMD (0x02);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_SetCursor(uint8_t)
- *	\brief      Ubica el cursor en una posición determinada
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  posición del cursor
-*/
-void LCD_SetCursor (uint8_t pos)
-{
-    pos |= 0x80;
-    LCD_WriteCMD (pos);
-	LCD_ReadBusy();
-}
 
-   
-/**
- *	\fn         void LCD_TicLCD(void)
- *	\brief      Rutina necesaria para el fncionamiento del módulo
- *  \details    Esta rutina se debe llama desde la interrupción de timer cada 1mS
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_TicLCD (void)
-{
-     if (LCD_Tout) LCD_Tout--;
-}
-
-   
-/**
- *	\fn         void LCD_Desp2Izq(void)
- *	\brief      Desplaza al LCD a la izq
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_Desp2Izq (void)
-{
-    LCD_WriteCMD (24);
-	LCD_ReadBusy();
-}
+ void TDO_LittleDelay (void)
+ {
+    asm("NOP");
+    asm("NOP");
+    asm("NOP");
+    asm("NOP");
+    asm("NOP");
+ }
+ 
+ 
+#endif

@@ -24,6 +24,7 @@ extern "C" {
 #endif
 
 #endif	/* CONFBITS_H */
+    #define XTAL_FREQ 20000000
 
     #pragma config PLLDIV   = 5             // (20 MHz crystal on PICDEM FS USB board)
     #pragma config CPUDIV   = OSC1_PLL2

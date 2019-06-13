@@ -1,10 +1,10 @@
 /*********************************************************************************************************
 *                                               LCD
-*                               Manejo del display LCD
+*                                   		Driver del LCD
 *
 *                                   <Copyright>
 *
-*                               <Copyright or distribution terms>
+*						<Copyright or distribution terms>
 *
 *
 *********************************************************************************************************/
@@ -12,16 +12,11 @@
 /*********************************************************************************************************
 *                                               <File description>
 *
-* Filename	: PR_LCD
+* Filename	: FW_LCD
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Esta librería solo puede utilizar las cuatro líneas menos significativas de 
-*   un puerto en caso de querer utilizar otras líneas se debe de reprogramar.
-*   Es necesarío este habilitada la interrupción de timer en la cual se debe de 
-*   llamar a la función LCD_tic() la misma establece las demoras que de otra
-*   manera habría que implementarlas como una función aparte. No olvide declarar 
-*   la variable extern uint8_t LCD_Tout en el archivo FW__Interrupt.c
+*  Note(s):
 *
 *
 *
@@ -29,9 +24,9 @@
 
 /*********************************************************************************************************
  *
- * \file		PR_LCD
- * \brief		Archivo con la función para el manejo del Display LCD
- * \date		11 de junio del 2019
+ * \file		FW_LCD.c
+ * \brief		Contiene los drivers necesarios para la libreria del dispplay LCD
+ * \date		13 de junio de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -45,6 +40,14 @@
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
 *********************************************************************************************************/
+
+#define     LCD_ENTRADA     0xF0            //!< Esto es para invertir el bus de datos y poder
+#define     LCD_SALIDA      0x0F            //!<leer cuando necesito ver si está busy..
+#define     LCD_BUSY        PORTDbits.RD7	//!< Con estos defines me abstraigo del hardware
+#define     LCD_BUS_DIR     TRISD
+
+#define     LCD_TRUE        0x1
+#define     LCD_FALSE       0x0
 
 /*********************************************************************************************************
  *** MACROS PRIVADAS AL MODULO
@@ -61,7 +64,6 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
-extern volatile uint8_t LCD_Tout;
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
@@ -69,7 +71,6 @@ extern volatile uint8_t LCD_Tout;
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
-
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -79,99 +80,78 @@ extern volatile uint8_t LCD_Tout;
 /*********************************************************************************************************
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
+/**
+ *	\fn         void LCD_Read_Busy(void)
+ *	\brief      Se encarga de leer el bit busy
+ *  \details    La función se asegura que el LCD haya terminado la operación ctual
+ *	\author     Esteban Lemos
+ *	\date 
+*/
+void LCD_ReadBusy (void)
+{
+    uint8_t aux;
 
-/**
- *	\fn         void LCD_Char2LCD(uint8_t caracter)
- *	\brief      Envia un carater al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  caracter 
-*/
-void LCD_Char2LCD (uint8_t caracter)
-{
-    LCD_WriteData (caracter);
-	LCD_ReadBusy();
-}
-
-
-/**
- *	\fn         void LCD_Msg2LCD(const uint8_t* msg)
- *	\brief      Envia un string al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  msg
-*/
-void LCD_Msg2LCD (const uint8_t* msg)
-{
-    while (*msg != 0)
-    {
-		LCD_WriteData(*msg);
-		LCD_ReadBusy();
-		msg++;
-	}
-}
-   
-/**
- *	\fn         void LCD_Clear(void)
- *	\brief      Borra el LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  mensaje a enviar al LCD
-*/
-void LCD_Clear (void)
-{
-    LCD_WriteCMD (0x01);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_RetHome(void)
- *	\brief      Regresa el curor al inicio
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_RetHome (void)
-{
-    LCD_WriteCMD (0x02);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_SetCursor(uint8_t)
- *	\brief      Ubica el cursor en una posición determinada
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  posición del cursor
-*/
-void LCD_SetCursor (uint8_t pos)
-{
-    pos |= 0x80;
-    LCD_WriteCMD (pos);
-	LCD_ReadBusy();
+	LCD_BUS_DIR | = LCD_ENTRADA;	// Pone el bus como entrada (hay que leer) D7 a D4
+	LCD_RS        = LCD_FALSE;      // Pone las señales para indicar que va a leer
+	LCD_RW        = LCD_TRUE;
+	do{                     // Hace
+		LCD_E     = LCD_TRUE;       // E=1
+		aux       = LCD_BUSY;       // Lee bit de busy
+		LCD_E     = LCD_FALSE;      // E=0
+		LCD_E     = LCD_TRUE;       // E=1
+		(void) BUSY;         // Lectura dummy para completar el byte
+		LCD_E     = LCD_FALSE;      // E=0, completo byte
+	}while (aux);           // Mientras busy = 1, cuando busy = 0 (LCD terminó), sale de este do-while
+	LCD_RW        = LCD_FALSE;		// Normaliza las señales
+	LCD_BUS_DIR & = LCD_SALIDA;     // Hace el bus salida para seguir escribiendo al LCD
 }
 
-   
+
 /**
- *	\fn         void LCD_TicLCD(void)
- *	\brief      Rutina necesaria para el fncionamiento del módulo
- *  \details    Esta rutina se debe llama desde la interrupción de timer cada 1mS
+ *	\fn         void LCD_Write_CMD(uint8_t comando)
+ *	\brief      Se encarga de escribir un comando en el LCD
  *	\author     Esteban Lemos
  *	\date 
+ *  \param      [in]  Recive el comando a enviar al LCD
 */
-void LCD_TicLCD (void)
+void LCD_WriteCMD (uint8_t comando)
 {
-     if (LCD_Tout) LCD_Tout--;
+    LCD_RS = LCD_FALSE;
+	LCD_RW = LCD_FALSE;
+	LCD_Write (comando);	// Envía efectivamente el comando
 }
 
-   
 /**
- *	\fn         void LCD_Desp2Izq(void)
- *	\brief      Desplaza al LCD a la izq
+ *	\fn         void LCD_Write(unsigned char dato)
+ *	\brief      Se encarga de escribir un dato en bus de a un nibble por vez
+ *  \details    Se encarga de escribir un dato en bus de a un nibble por vez
+ *              para poder trabajar en 4 bits.
  *	\author     Esteban Lemos
  *	\date 
+ *  \param      [in]  Recive el dato a enviar al LCD
 */
-void LCD_Desp2Izq (void)
+void LCDWrite (uint8_t dato)
 {
-    LCD_WriteCMD (24);
-	LCD_ReadBusy();
+    LCD_DISPLAY & = 0x0F;
+    LCD_E         = LCD_TRUE;
+    LCD_DISPLAY | = (uint8_t)(dato & 0xF0);		// Pone el nibble alto en el bus
+    LCD_E         = LCD_FALSE;
+    LCD_DISPLAY & = 0x0F;
+    LCD_E         = LCD_TRUE;
+    LCD_DISPLAY | = (uint8_t)(dato << 4);		// Pone el nibble alto en el bus
+    LCD_E         = LCD_FALSE;
+}
+
+/**
+ *	\fn         void LCD_Write_Data (uint8_t dato)
+ *	\brief      Configura las señales necesarias para escribir el dato
+ *	\author     Esteban Lemos
+ *	\date 
+ *  \param      [in]  Recive el dato a enviar al LCD
+*/
+void LCD_WriteData (uint8_t dato)
+{
+    LCD_RS = LCD_TRUE;
+	LCD_RW = LCD_FALSE;
+	LCD_Write (dato);	// Envía efectivamente el dato
 }

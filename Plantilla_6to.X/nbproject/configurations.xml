@@ -7,9 +7,13 @@
       <logicalFolder name="inc" displayName="inc" projectFiles="true">
         <itemPath>inc/FW_InitKit.h</itemPath>
         <itemPath>inc/FW_InitTimer.h</itemPath>
-        <itemPath>inc/confbits.h</itemPath>
         <itemPath>inc/Tdatos.h</itemPath>
-        <itemPath>inc/LCD.h</itemPath>
+        <itemPath>inc/PR_LCD.h</itemPath>
+        <itemPath>inc/FW_LCD.h</itemPath>
+        <itemPath>inc/Aplicacion.h</itemPath>
+        <itemPath>inc/Confbits.h</itemPath>
+        <itemPath>inc/BaseBoard.h</itemPath>
+        <itemPath>inc/FW_Teclado.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -20,11 +24,15 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="Aplicacion" displayName="Aplicacion" projectFiles="true">
+        <itemPath>Aplicacion/Aplicacion.c</itemPath>
+        <itemPath>inc/PR_Teclado.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Driver"
                      displayName="Firmware_Driver"
                      projectFiles="true">
         <itemPath>Firmware_Driver/FW_Interrupt.c</itemPath>
+        <itemPath>Firmware_Driver/FW_LCD.c</itemPath>
+        <itemPath>Firmware_Driver/FW_Teclado.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Init"
                      displayName="Firmware_Init"
@@ -32,9 +40,11 @@
         <itemPath>Firmware_Init/FW_InitTimer.c</itemPath>
         <itemPath>Firmware_Init/FW_InitKit.c</itemPath>
         <itemPath>Firmware_Init/FW_InitLCD.c</itemPath>
+        <itemPath>Firmware_Init/FW_InitTeclado.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Primitivas" displayName="Primitivas" projectFiles="true">
         <itemPath>Primitivas/PR_LCD.c</itemPath>
+        <itemPath>Primitivas/PR_Teclado.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

@@ -1,10 +1,10 @@
 /*********************************************************************************************************
-*                                               LCD
-*                               Manejo del display LCD
+*                                             Aplicacion
+*                               Codigo de la aplicacion a desarrollar
 *
-*                                   <Copyright>
+*						<Copyright>
 *
-*                               <Copyright or distribution terms>
+*						<Copyright or distribution terms>
 *
 *
 *********************************************************************************************************/
@@ -12,16 +12,11 @@
 /*********************************************************************************************************
 *                                               <File description>
 *
-* Filename	: PR_LCD
+* Filename	: Aplicacion.c
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Esta librería solo puede utilizar las cuatro líneas menos significativas de 
-*   un puerto en caso de querer utilizar otras líneas se debe de reprogramar.
-*   Es necesarío este habilitada la interrupción de timer en la cual se debe de 
-*   llamar a la función LCD_tic() la misma establece las demoras que de otra
-*   manera habría que implementarlas como una función aparte. No olvide declarar 
-*   la variable extern uint8_t LCD_Tout en el archivo FW__Interrupt.c
+*  Note(s): Es este archivo deve escribir el código de su programa
 *
 *
 *
@@ -29,9 +24,10 @@
 
 /*********************************************************************************************************
  *
- * \file		PR_LCD
- * \brief		Archivo con la función para el manejo del Display LCD
- * \date		11 de junio del 2019
+ * \file		Aplicacion.c
+ * \brief		Escriba la función de su aplicación de forma breve
+ * \details     Escriba la función de su aplicación de forma extensa
+ * \date		13 de junio del 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -40,7 +36,7 @@
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "FW_LCD.h"
+#include "Aplicacion.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -60,16 +56,24 @@
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
+ *   se escriben en CamelCase y estan precedidas por la identificación del 
+ *   módulo segida de un _ 
+ *   ej: MEM_POOL  Mem_PoolHeap; 
 *********************************************************************************************************/
-extern volatile uint8_t LCD_Tout;
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
+ *   se declaran con static y se escriben en CamelCase y estan precedidas por la 
+ *   identificación del módulo segida de un _ y usan _ para separar las palabras
+ *   cuando tienen nombres compuestos
+ *   ej: static MEM_POOL  Mem_Pool_Heap; 
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
-
+ * se declaran como staticas y se escriben en CamelCase, estan precedidas por la
+ * identificación del módulo seguida de un _. No se decaran en el .h
+ * ej static void Clk_DateTimer(paraetros)
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -81,97 +85,13 @@ extern volatile uint8_t LCD_Tout;
 *********************************************************************************************************/
 
 /**
- *	\fn         void LCD_Char2LCD(uint8_t caracter)
- *	\brief      Envia un carater al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  caracter 
+	\fn  		void Aplicacion (void)
+	\brief 		Funcion principal
+ 	\author 	Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
+ 	\date 		13 de junio del 2019
 */
-void LCD_Char2LCD (uint8_t caracter)
-{
-    LCD_WriteData (caracter);
-	LCD_ReadBusy();
-}
 
-
-/**
- *	\fn         void LCD_Msg2LCD(const uint8_t* msg)
- *	\brief      Envia un string al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  msg
-*/
-void LCD_Msg2LCD (const uint8_t* msg)
+void Aplicacion (void)
 {
-    while (*msg != 0)
-    {
-		LCD_WriteData(*msg);
-		LCD_ReadBusy();
-		msg++;
-	}
-}
-   
-/**
- *	\fn         void LCD_Clear(void)
- *	\brief      Borra el LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  mensaje a enviar al LCD
-*/
-void LCD_Clear (void)
-{
-    LCD_WriteCMD (0x01);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_RetHome(void)
- *	\brief      Regresa el curor al inicio
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_RetHome (void)
-{
-    LCD_WriteCMD (0x02);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_SetCursor(uint8_t)
- *	\brief      Ubica el cursor en una posición determinada
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  posición del cursor
-*/
-void LCD_SetCursor (uint8_t pos)
-{
-    pos |= 0x80;
-    LCD_WriteCMD (pos);
-	LCD_ReadBusy();
-}
-
-   
-/**
- *	\fn         void LCD_TicLCD(void)
- *	\brief      Rutina necesaria para el fncionamiento del módulo
- *  \details    Esta rutina se debe llama desde la interrupción de timer cada 1mS
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_TicLCD (void)
-{
-     if (LCD_Tout) LCD_Tout--;
-}
-
-   
-/**
- *	\fn         void LCD_Desp2Izq(void)
- *	\brief      Desplaza al LCD a la izq
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_Desp2Izq (void)
-{
-    LCD_WriteCMD (24);
-	LCD_ReadBusy();
+    
 }

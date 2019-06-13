@@ -31,24 +31,18 @@
 
 /****************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
- *   se escriben en CamelCase y estan precedidas por la identificación del 
- *   módulo segida de un _ 
- *   ej: MEM_POOL  Mem_PoolHeap; 
 ****************************************************************************************************/
+
+extern volatile uint8_t LCD_Tout;
+extern volatile uint8_t TDO_flag_kb;
+extern volatile uint8_t TDO_delay_kb;
 
 /****************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
- *   se declaran con static y se escriben en CamelCase y estan precedidas por la 
- *   identificación del módulo segida de un _ y usan _ para separar las palabras
- *   cuando tienen nombres compuestos
- *   ej: static MEM_POOL  Mem_Pool_Heap; 
 ****************************************************************************************************/
 
 /****************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
- * se declaran como staticas y se escriben en CamelCase, estan precedidas por la
- * identificación del módulo seguida de un _. No se decaran en el .h
- * ej static void Clk_DateTimer(paraetros)
 ****************************************************************************************************/
 
 /****************************************************************************************************

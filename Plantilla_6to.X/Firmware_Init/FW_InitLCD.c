@@ -40,19 +40,20 @@
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "LCD.h"
+#include "PR_LCD.h"
+#include "FW_LCD.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
 *********************************************************************************************************/
 
-#define     ENTRADA     0xF0            //!< Esto es para invertir el bus de datos y poder
-#define     SALIDA      0x0F            //!<leer cuando necesito ver si está busy..
-#define     BUSY        PORTDbits.RD7	//!< Con estos defines me abstraigo del hardware
-#define     BUS_DIR     TRISD
+#define     LCD_ENTRADA     0xF0            //!< Esto es para invertir el bus de datos y poder
+#define     LCD_SALIDA      0x0F            //!<leer cuando necesito ver si está busy..
+#define     LCD_BUSY        PORTDbits.RD7	//!< Con estos defines me abstraigo del hardware
+#define     LCD_BUS_DIR     TRISD
 
-#define     TRUE        0x1
-#define     FALSE       0x0
+#define     LCD_TRUE        0x1
+#define     LCD_FALSE       0x0
 
 /*********************************************************************************************************
  *** MACROS PRIVADAS AL MODULO
@@ -69,7 +70,7 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
-uint8_t LCD_Tout = 0;
+volatile uint8_t LCD_Tout = 0;
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
@@ -79,73 +80,10 @@ uint8_t LCD_Tout = 0;
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
 
 *********************************************************************************************************/
-static void LCD_Read_Busy (void);		
-static void LCD_Write_CMD (uint8_t comando);	
-static void LCD_Write (uint8_t dato);
+
 /*********************************************************************************************************
  *** FUNCIONES PRIVADAS AL MODULO
 *********************************************************************************************************/
-/**
- *	\fn         static void LCD_Read_Busy(void)
- *	\brief      Se encarga de leer el bit busy
- *  \details    La función se asegura que el LCD haya terminado la operación ctual
- *	\author     Esteban Lemos
- *	\date 
-*/
-static void LCD_Read_Busy (void)
-{
-    uint8_t aux;
-
-	BUS_DIR | = ENTRADA;	// Pone el bus como entrada (hay que leer) D7 a D4
-	RS        = FALSE;      // Pone las señales para indicar que va a leer
-	RW        = TRUE;
-	do{                     // Hace
-		E     = TRUE;       // E=1
-		aux   = BUSY;       // Lee bit de busy
-		E     = FALSE;      // E=0
-		E     = TRUE;       // E=1
-		(void)BUSY;         // Lectura dummy para completar el byte
-		E     = FALSE;      // E=0, completo byte
-	}while (aux);           // Mientras busy = 1, cuando busy = 0 (LCD terminó), sale de este do-while
-	RW        = FALSE;		// Normaliza las señales
-	BUS_DIR & = SALIDA;     // Hace el bus salida para seguir escribiendo al LCD
-}
-
-
-/**
- *	\fn         static void LCD_Write_CMD(uint8_t comando)
- *	\brief      Se encarga de escribir un comando en el LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  Recive el comando a enviar al LCD
-*/
-static void LCD_Write_CMD (uint8_t comando)
-{
-    RS = FALSE;
-	RW = FALSE;
-	LCD_Write (comando);	// Envía efectivamente el comando
-}
-
-/**
- *	\fn         static void LCD_Write(unsigned char dato)
- *	\brief      Se encarga de escribir un dato en bus de a un nibble por vez
- *  \details    Se encarga de escribir un dato en bus de a un nibble por vez
- *              para poder trabajar en 4 bits.
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  Recive el dato a enviar al LCD
-*/
-static void LCD_Write (uint8_t dato)
-{
-    DISPLAY & = 0x0F;
-    E         = TRUE;
-    DISPLAY | = (dato & 0xF0);		// Pone el nibble alto en el bus
-    E         = FALSE;
-    DISPLAY & = 0x0F;
-    E         = TRUE;
-    DISPLAY | = (dato << 4);		// Pone el nibble alto en el bus
-    E         = FALSE;
-}
 
 /*********************************************************************************************************
  *** FUNCIONES GLOBALES AL MODULO
@@ -162,34 +100,34 @@ static void LCD_Write (uint8_t dato)
 */
 void LCD_Init(void)
 {
-    BUS_DIR     & = SALIDA;	// Hace el bus salida para escribir en el LCD
-    RS_BUS_DIR    = 0;
-    RW_BUS_DIR    = 0;
-    E_BUS_DIR     = 0;
+    LCD_BUS_DIR     & = LCD_SALIDA;	// Hace el bus salida para escribir en el LCD
+    LCD_RS_BUS_DIR    = 0;
+    LCD_RW_BUS_DIR    = 0;
+    LCD_E_BUS_DIR     = 0;
         
 
 	LCD_Tout = 30;          // Espera 30 interrup de timer
 	while (LCD_Tout);
 
-	LCD_Write_CMD (0x02);        // trabajar en 4bits 0010****
+	LCD_WriteCMD (0x02);        // trabajar en 4bits 0010****
 	LCD_Tout = 1;		// Al menos 50uS 
 	while (LCD_Tout);	// Espera acá hasta que LCD_tout se hace 0
 
-	LCD_Write_CMD (0x28);	// 4 bits 2 lineas caracter 5*8
+	LCD_WriteCMD (0x28);	// 4 bits 2 lineas caracter 5*8
 	LCD_Tout = 1;
 	while (LCD_Tout);
 
-	LCD_Write_CMD (0x0C);        //disp ON Cursor OFF Blink OFF
+	LCD_WriteCMD (0x0C);        //disp ON Cursor OFF Blink OFF
 	LCD_Tout = 1;
 	while (LCD_Tout);
 
-	LCD_Write_CMD (0x01);        // borra el display
+	LCD_WriteCMD (0x01);        // borra el display
 	LCD_Tout = 1;
 	while (LCD_Tout);
 
-	LCD_Write_CMD (0x06);        //Incrementar la pos auto SCROLL OFF
+	LCD_WriteCMD (0x06);        //Incrementar la pos auto SCROLL OFF
 	LCD_Tout = 1;
 	while (LCD_Tout);
 
-	LCD_Read_Busy ();												// Esta rutina lee el bit de busy a ver si el LCD se liberó..
+	LCD_ReadBusy ();												// Esta rutina lee el bit de busy a ver si el LCD se liberó..
 }
