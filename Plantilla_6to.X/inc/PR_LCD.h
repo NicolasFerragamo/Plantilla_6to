@@ -46,6 +46,7 @@
 
 #include <xc.h>
 #include "Tdatos.h"
+#include "BaseBoard.h"
 
 /*********************************************************************************************************
  *** DEFINES GLOBALES
@@ -75,10 +76,8 @@
 
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
- *  se escriben en CamelCase, estan precedidas por la identificación del módulo 
- *  seguida de un _. No se decaran en el .h
- *  ej  void Clk_DateTimer(paraetros)
 **********************************************************************************************************/
+#if SHIELD_ACTIVO == __SHIELD2
 
 void LCD_Char2LCD (uint8_t caracter);
 void LCD_Msg2LCD (const uint8_t* msg);    
@@ -87,5 +86,7 @@ void LCD_RetHome (void);
 void LCD_SetCursor (uint8_t pos);     
 void LCD_TicLCD (void);                
 void LCD_Desp2Izq (void);
+
+#endif
 
 #endif /* PR_LCD_H */

@@ -57,9 +57,9 @@
 
 void main (void) 
 {
-    Kit_Init();     // Inicializa los puertos
-    Tmr0_Init();    // Inicializa el timer 0
-    ei();           // Habilita las interrupciones globales
+    Kit_Init ();     // Inicializa los puertos
+    Tmr0_Init ();    // Inicializa el timer 0
+    ei ();           // Habilita las interrupciones globales
     while (1)
     {   
       Aplicacion ();

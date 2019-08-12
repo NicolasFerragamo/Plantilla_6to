@@ -14,6 +14,7 @@
         <itemPath>inc/Confbits.h</itemPath>
         <itemPath>inc/BaseBoard.h</itemPath>
         <itemPath>inc/FW_Teclado.h</itemPath>
+        <itemPath>inc/PR_Teclado.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -25,7 +26,6 @@
                    projectFiles="true">
       <logicalFolder name="Aplicacion" displayName="Aplicacion" projectFiles="true">
         <itemPath>Aplicacion/Aplicacion.c</itemPath>
-        <itemPath>inc/PR_Teclado.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Driver"
                      displayName="Firmware_Driver"
@@ -166,7 +166,7 @@
         <property key="input-libraries" value="libm"/>
         <property key="keep-generated-startup.as" value="false"/>
         <property key="link-in-c-library" value="true"/>
-        <property key="link-in-c-library-gcc" value=""/>
+        <property key="link-in-c-library-gcc" value="-mc90lib"/>
         <property key="link-in-peripheral-library" value="true"/>
         <property key="managed-stack" value="false"/>
         <property key="opt-xc8-linker-file" value="false"/>
@@ -206,6 +206,13 @@
         <property key="periphComp6.gte" value="gt"/>
         <property key="reset.scl" value="false"/>
         <property key="reset.type" value="MCLR"/>
+        <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
+        <property key="tracecontrol.select" value="0"/>
+        <property key="tracecontrol.stallontracebufferfull" value="false"/>
+        <property key="tracecontrol.timestamp" value="0"/>
+        <property key="tracecontrol.tracebufmax" value="546000"/>
+        <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
+        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>
@@ -440,6 +447,8 @@
                   value="report"/>
         <property key="warningmessagebreakoptions.W0243_ADC_INVALID_TAD" value="report"/>
         <property key="warningmessagebreakoptions.W0244_ADC_CONVERSION_ABORTED"
+                  value="report"/>
+        <property key="warningmessagebreakoptions.W0245_ADC_BUFREGEN_NOT_ALLOWED"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0400_PWM_PWM_FASTER_THAN_FOSC"
                   value="report"/>

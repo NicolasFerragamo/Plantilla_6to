@@ -40,7 +40,6 @@
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "PR_LCD.h"
 #include "FW_LCD.h"
 
 /*********************************************************************************************************
@@ -89,6 +88,7 @@ volatile uint8_t LCD_Tout = 0;
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
 
+#if SHIELD_ACTIVO == __SHIELD2
 
 /**
  *	\fn         void LCD_Init(void)
@@ -131,3 +131,5 @@ void LCD_Init(void)
 
 	LCD_ReadBusy ();												// Esta rutina lee el bit de busy a ver si el LCD se liberó..
 }
+
+#endif

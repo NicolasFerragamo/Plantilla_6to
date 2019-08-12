@@ -48,7 +48,7 @@
 
 #define __SHIELD1  1    //!< Selecciono el shield 1
 #define __SHIELD2  2    //!< Selecciono el shield 2 
-#define SHIELD_ACTIVO __SHIELD2 //!< seleciona el shield activo
+#define SHIELD_ACTIVO __SHIELD1 //!< seleciona el shield activo
 
 #if SHIELD_ACTIVO == __SHIELD1
 
@@ -126,8 +126,8 @@
 
 #endif
 
-#define		ENTRADA		0
-#define		SALIDA		1
+#define		ENTRADA		1
+#define		SALIDA		0
 
 #define		ON			1
 #define		OFF			0
