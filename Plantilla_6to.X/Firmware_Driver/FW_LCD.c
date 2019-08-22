@@ -134,7 +134,7 @@ void LCD_WriteCMD (uint8_t comando)
  *	\date 
  *  \param      [in]  Recive el dato a enviar al LCD
 */
-void LCDWrite (uint8_t dato)
+void LCD_Write (uint8_t dato)
 {
     LCD_DISPLAY & = 0x0F;
     LCD_E         = LCD_TRUE;

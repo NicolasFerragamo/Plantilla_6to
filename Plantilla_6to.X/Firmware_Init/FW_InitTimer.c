@@ -75,6 +75,7 @@ void Tmr0_Init(void)
     TMR0L             = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
     TMR0H             = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
     INTCONbits.TMR0IE = 1;      /* Habilita la interrupción de timer 0 */
+    T0CONbits.TMR0ON  = 0;      /* enciendo el timer */
 }
 
 /**
