@@ -13,7 +13,7 @@
 *                                               <File description>
 *
 * Filename	: FW_LCD
-* Version	: 1.0.0					
+* Version	: 1.0.1					
 * Programmer(s) : NEF
 **********************************************************************************************************
 *  Note(s):
@@ -65,6 +65,7 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
+volatile uint8_t LCD_Tout = 0;
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
@@ -158,6 +159,19 @@ void LCD_WriteData (uint8_t dato)
     LCD_RS = LCD_TRUE;
 	LCD_RW = LCD_FALSE;
 	LCD_Write (dato);	// Envía efectivamente el dato
+}
+
+
+/**
+ *	\fn         void LCD_TicLCD(void)
+ *	\brief      Rutina necesaria para el fncionamiento del módulo
+ *  \details    Esta rutina se debe llama desde la interrupción de timer cada 1mS
+ *	\author     Esteban Lemos
+ *	\date 
+*/
+void LCD_TicLCD (void)
+{
+     if (LCD_Tout) LCD_Tout--;
 }
 
 #endif

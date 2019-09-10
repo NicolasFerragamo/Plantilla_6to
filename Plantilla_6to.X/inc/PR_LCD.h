@@ -14,7 +14,7 @@
 *                                               <File description>
 *
 * Filename	: LCD
-* Version	: 1.0.0					
+* Version	: 1.0.1					
 * Programmer(s) : NEF
 **********************************************************************************************************
 *  Note(s):
@@ -58,7 +58,6 @@
 #define     LCD_RW_BUS_DIR  TRISEbits.RE1
 #define     LCD_E			PORTEbits.RE0
 #define     LCD_E_BUS_DIR   TRISEbits.RE0
-
 #define     LCD_DISPLAY     LATD	//!< define el puerto dnde esta conectado el bus
 
 /*********************************************************************************************************
@@ -83,8 +82,7 @@ void LCD_Char2LCD (uint8_t caracter);
 void LCD_Msg2LCD (const uint8_t* msg);    
 void LCD_Clear (void);	
 void LCD_RetHome (void);	
-void LCD_SetCursor (uint8_t pos);     
-void LCD_TicLCD (void);                
+void LCD_SetCursor (uint8_t pos);                     
 void LCD_Desp2Izq (void);
 
 #endif

@@ -13,7 +13,7 @@
 *                                               <File description>
 *
 * Filename	: PR_LCD
-* Version	: 1.0.0					
+* Version	: 1.0.1					
 * Programmer(s) : NEF
 **********************************************************************************************************
 *  Note(s): Esta librería solo puede utilizar las cuatro líneas menos significativas de 
@@ -62,7 +62,6 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
-extern volatile uint8_t LCD_Tout;
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
@@ -151,20 +150,7 @@ void LCD_SetCursor (uint8_t pos)
 	LCD_ReadBusy();
 }
 
-   
-/**
- *	\fn         void LCD_TicLCD(void)
- *	\brief      Rutina necesaria para el fncionamiento del módulo
- *  \details    Esta rutina se debe llama desde la interrupción de timer cada 1mS
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_TicLCD (void)
-{
-     if (LCD_Tout) LCD_Tout--;
-}
 
-   
 /**
  *	\fn         void LCD_Desp2Izq(void)
  *	\brief      Desplaza al LCD a la izq
