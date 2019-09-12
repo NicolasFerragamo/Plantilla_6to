@@ -79,7 +79,8 @@
 #define TDO_FALSE 0
 #define TDO_TRUE 1
 
-
+// define el tipo de tabla a utilizar, si quiere la tabla binaria comente esta linea
+#define ResASCII 1
 /*********************************************************************************************************
  *** MACROS GLOBALES
 *********************************************************************************************************/
@@ -96,7 +97,7 @@
  *** PROTOTIPOS DE FUNCIONES GLOBALES
 **********************************************************************************************************/
 
-#if SHIELD_ACTIVO == __SHIELD2
+#if SHIELD_ACTIVO == __SHIELD1
 /**  
  *  \brief      Debuelve la tecla seleccionada
  *  \details    Función que devuelve una tecla presionada o TDO_NO_TECLA = 0xFF      

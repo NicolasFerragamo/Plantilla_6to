@@ -1,10 +1,10 @@
 /*********************************************************************************************************
-*                                               LCD
-*                               Manejo del display LCD
+*                                                ADC
+*						Contiene las funciones para el manejo del ADC
 *
-*                                   <Copyright>
+*						<Copyright>
 *
-*                               <Copyright or distribution terms>
+*						<Copyright or distribution terms>
 *
 *
 *********************************************************************************************************/
@@ -12,24 +12,22 @@
 /*********************************************************************************************************
 *                                               <File description>
 *
-* Filename	: PR_LCD
-* Version	: 1.0.1					
+* Filename	: PR_ADC
+* Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Esta librería solo puede utilizar las cuatro líneas menos significativas de 
-*   un puerto en caso de querer utilizar otras líneas se debe de reprogramar.
-*   Es necesarío este habilitada la interrupción de timer0 en la cual se debe de 
-*   llamar a la función LCD_tic() la misma establece las demoras que de otra
-*   manera habría que implementarlas como una función aparte. No olvide declarar 
-*   la variable extern uint8_t LCD_Tout en el archivo FW__Interrupt.c
+*  Note(s):
+*
+*
 *
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		PR_LCD
- * \brief		Archivo con la función para el manejo del Display LCD
- * \date		11 de junio del 2019
+ * \file		ADC
+ * \brief		Incluye las definiciones necesarias para el manejo
+ *               del ADC
+ * \date		12 de septiembre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -38,8 +36,7 @@
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "FW_LCD.h"
-#include "PR_LCD.h"
+#include "PR_ADC.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -67,7 +64,6 @@
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
-
 *********************************************************************************************************/
 
 /*********************************************************************************************************
@@ -77,88 +73,76 @@
 /*********************************************************************************************************
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
-#if SHIELD_ACTIVO == __SHIELD2
+
+
 /**
- *	\fn         void LCD_Char2LCD(uint8_t caracter)
- *	\brief      Envia un carater al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  caracter 
+ *	\fn  		ADC_Obtener8bits
+ *	\brief 		Devuelve el valor de la convercion del ADC en 8 bits
+ *  \details    Funcion que lee la entrada AN0 y devuelve el valor de la convercion
+ *              en 8 bits
+ *	\author 	Nombre
+ *	\date 		
+ *	\param [in] 	
+ *	\param [out] 	 resultado de la conversión 
+ *	\return uint8_t  resultado de la conversión
 */
-void LCD_Char2LCD (uint8_t caracter)
+uint8_t  ADC_Obtener8bits (void)
 {
-    LCD_WriteData (caracter);
-	LCD_ReadBusy();
+    uint8_t   guardo_porta, guardo_trisa; 
+    
+    
+    guardo_porta = PORTA;
+    guardo_trisa = TRISA;
+    
+    TRISAbits.RA0=1;        //RA0 se transforma en AN0
+    ADCON1 = 0x0E;          //selección de entradas analógicas canal 0 por defecto
+    ADCON2 = 0x2D;
+    ADCON0bits.ADON=1;
+    ADCON0bits.GO=1;        //inicia la conversión
+    
+    while(ADCON0bits.GO);
+    
+    ADCON0bits.ADON=0;      //se apaga el conversor
+    ADCON1 = 0x0F;
+    LATA = guardo_porta;
+    TRISA = guardo_trisa;
+                    
+    return ADRESH;
 }
 
 
 /**
- *	\fn         void LCD_Msg2LCD(const uint8_t* msg)
- *	\brief      Envia un string al LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  msg
+ *  \fn  		ADC_Obtener10bits
+ *	\brief 		Devuelve el valor de la convercion del ADC en 10 bits
+ *              Funcion que lee la entrada AN0 y devuelve el valor de la convercion
+ *              en 10 bits
+ *	\author 	Nombre
+ *	\date 		
+ *	\param [in] 	
+ *	\param [out] 	 resultado de la conversión 
+ *	\return uint16_t  resultado de la conversión
 */
-void LCD_Msg2LCD (const uint8_t* msg)
+uint16_t ADC_Obtener10bits (void)
 {
-    while (*msg != 0)
-    {
-		LCD_WriteData(*msg);
-		LCD_ReadBusy();
-		msg++;
-	}
+    uint8_t   guardo_porta, guardo_trisa; 
+    
+    
+    guardo_porta = PORTA;
+    guardo_trisa = TRISA;
+    
+    TRISAbits.RA0=1;        //RA0 se transforma en AN0
+    ADCON1 = 0x0E;          //selección de entradas analógicas canal 0 por defecto
+    ADCON2 = 0xAD;
+    ADCON0bits.ADON=1;
+    ADCON0bits.GO=1;        //inicia la conversión
+    
+    while(ADCON0bits.GO);
+    
+    ADCON0bits.ADON=0;      //se apaga el conversor
+    ADCON1 = 0x0F;
+    LATA = guardo_porta;
+    TRISA = guardo_trisa;
+                    
+    return (ADRESH << 8) + ADRESL;
+//  return (ADRESH & 0x03) * 256 + ADRESL   
 }
-   
-/**
- *	\fn         void LCD_Clear(void)
- *	\brief      Borra el LCD
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  mensaje a enviar al LCD
-*/
-void LCD_Clear (void)
-{
-    LCD_WriteCMD (0x01);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_RetHome(void)
- *	\brief      Regresa el curor al inicio
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_RetHome (void)
-{
-    LCD_WriteCMD (0x02);
-	LCD_ReadBusy();
-}
-   
-/**
- *	\fn         void LCD_SetCursor(uint8_t)
- *	\brief      Ubica el cursor en una posición determinada
- *	\author     Esteban Lemos
- *	\date 
- *  \param      [in]  posición del cursor
-*/
-void LCD_SetCursor (uint8_t pos)
-{
-    pos |= 0x80;
-    LCD_WriteCMD (pos);
-	LCD_ReadBusy();
-}
-
-
-/**
- *	\fn         void LCD_Desp2Izq(void)
- *	\brief      Desplaza al LCD a la izq
- *	\author     Esteban Lemos
- *	\date 
-*/
-void LCD_Desp2Izq (void)
-{
-    LCD_WriteCMD (24);
-	LCD_ReadBusy();
-}
-
-#endif

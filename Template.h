@@ -52,7 +52,7 @@
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
- *   Se escriben en mayusculas y estar precedidas por la identificación del
+ *   Se escriben en mayusculas y estan precedidas por la identificación del
  *   módulo segidas de un '_' . Si el nombre esta compuesto por mas de una
  *   palabra, las mismas deben separarce con un '_'.
  *   ej: #define  MAYOR(A,B)     (A > B) ? A : B;
