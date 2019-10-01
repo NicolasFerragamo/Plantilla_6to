@@ -60,7 +60,7 @@
 #include "EEPROM.h"
 #include "USART.h"
 #include "PR_ADC.h"
-#include "MacTimer.h"
+//#include "MacTimer.h"
 
 /*********************************************************************************************************
  *** DEFINES GLOBALES
