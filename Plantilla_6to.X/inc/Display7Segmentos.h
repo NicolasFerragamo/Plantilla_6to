@@ -48,16 +48,16 @@
 *********************************************************************************************************/
 #define 	DP_DIGITOS		4  //!< Números de diplays
 
-#define DP_DISP1   LATAbits.LA4
-#define DP_DISP2   LATAbits.LA5
-#define DP_DISP3   LATEbits.LE0
-#define DP_DISP4   LATEbits.LE1
+#define DP_DISP4   LATAbits.LA4
+#define DP_DISP3   LATAbits.LA5
+#define DP_DISP2   LATEbits.LE0
+#define DP_DISP1   LATEbits.LE1
 
 
 #define DP_SEGMENTOA LATAbits.LA0
-#define DP_SEGMENTOB LATAbits.LA0
-#define DP_SEGMENTOC LATAbits.LA0
-#define DP_SEGMENTOD LATAbits.LA0
+#define DP_SEGMENTOB LATAbits.LA1
+#define DP_SEGMENTOC LATAbits.LA2
+#define DP_SEGMENTOD LATAbits.LA3
 #define DP_DOT       LATEbits.LE2
 
 /*********************************************************************************************************

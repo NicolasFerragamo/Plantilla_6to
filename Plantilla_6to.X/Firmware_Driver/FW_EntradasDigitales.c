@@ -99,10 +99,10 @@ void ED_Debounce (void)
 	static uint8_t contador_estados[ED_ENTRADAS];
 	// aca se guarda el estado de la cuenta para validar la tecla
 
-	j = BOT1; // remplazar keypor la tecla 
-	j = BOT2 << (0x01);
-    j = BOT3 << (0x02);
-    j = BOT4 << (0x03);
+	j = !BOT1; 
+	j |= (uint8_t) (!BOT2 << (0x01));
+    j |= (uint8_t) (!BOT3 << (0x02));
+    j |= (uint8_t) (!BOT4 << (0x03));
             
 	cambios = ED_BufferEntradas ^ j ; // en cambios queda bit por bit los cambios registrados
 	// correspondentes a cada tecla precionada;

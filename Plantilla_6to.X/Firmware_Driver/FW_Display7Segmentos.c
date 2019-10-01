@@ -90,12 +90,17 @@ void DP_BarridoDisplay (void)
 {
     static uint8_t digito = 0;
 
+   DP_DISP1 = OFF; 
+    DP_DISP2 = OFF; 
+    DP_DISP3 = OFF;
+    DP_DISP4 = OFF; 
+
 	DP_SEGMENTOA =  (DP_msgDisplay[digito]      & (uint8_t) 0x01);
 	DP_SEGMENTOB =  (DP_msgDisplay[digito] >> 1 & (uint8_t) 0x01);
 	DP_SEGMENTOC =  (DP_msgDisplay[digito] >> 2 & (uint8_t) 0x01);
     DP_SEGMENTOD =  (DP_msgDisplay[digito] >> 3 & (uint8_t) 0x01);  
     
-    switch(digito)
+      switch(digito)
 	{
 		case DIGITO0:
 			DP_DISP1 = ON; 

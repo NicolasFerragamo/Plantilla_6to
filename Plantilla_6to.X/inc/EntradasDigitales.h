@@ -52,10 +52,10 @@
 #define		ED_ENTRADAS         4   //!< cantidad de entradas 
 
 
-#define		ED_TECLA0 ((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
-#define		ED_TECLA1 ((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA2 ((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA3 ((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
+#define		ED_TECLA0  (uint8_t)((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
+#define		ED_TECLA1  (uint8_t)((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
+#define		ED_TECLA2  (uint8_t)((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
+#define		ED_TECLA3  (uint8_t)((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
