@@ -68,11 +68,13 @@
 
 #if SHIELD_ACTIVO == __SHIELD2
 void LCD_Init (void);
+void LCD_InitCGRAM (void);
 void LCD_ReadBusy (void);		
 void LCD_WriteCMD (uint8_t comando);	
 void LCD_Write (uint8_t dato);
 void LCD_WriteData (uint8_t dato);	// Pone señales para escribir dato
-void LCD_TicLCD (void);           
+void LCD_TicLCD (void);  
+
 
 #endif /* SHIELD_ACTIVO */
 

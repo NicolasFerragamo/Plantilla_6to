@@ -92,6 +92,10 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES
 *********************************************************************************************************/
+extern volatile uint8_t TDO_fila; 
+extern volatile uint8_t TDO_col;// Aquí guardará indice de matriz
+extern volatile uint8_t TDO_flag_kb;
+extern volatile uint8_t TDO_delay_kb;// Modificadas por hardware (interrupciones)
 
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES

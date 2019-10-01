@@ -14,6 +14,7 @@
 #include "Tdatos.h"
 #include "EntradasDigitales.h"
 #include "Display7Segmentos.h"
+#include "PR_Teclado.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -34,10 +35,6 @@
 /****************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
 ****************************************************************************************************/
-
-extern volatile uint8_t LCD_Tout;
-extern volatile uint8_t TDO_flag_kb;
-extern volatile uint8_t TDO_delay_kb;
 
 /****************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO

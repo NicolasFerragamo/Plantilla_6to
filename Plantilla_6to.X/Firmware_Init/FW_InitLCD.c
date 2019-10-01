@@ -41,6 +41,7 @@
 *********************************************************************************************************/
 
 #include "FW_LCD.h"
+#include "PR_LCD.h"
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -65,6 +66,25 @@
 /*********************************************************************************************************
  *** TABLAS PRIVADAS AL MODULO
 *********************************************************************************************************/
+
+/***
+* \var		LCD_CharactersCGRAM[ ]
+* \brief    Tabla que contine los caracteres de los usuarios
+* \details  Tabla que contine los caracteres de los usuarios, para usarla complete
+*          los valores de cada elemento de la tabla con sus caraceres
+*/
+
+static const uint8_t LCD_CharactersCGRAM[ ] = {
+    0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x00,  //!< caracter 0x00 '|     ' una barra
+    0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x00,  //!< caracter 0x01 '||    ' dos barras
+    0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x00,  //!< caracter 0x02 '|||   ' tes barras
+    0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x00,  //!< caracter 0x03 '||||  ' cuatro barras
+    0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x00,  //!< caracter 0x04 '||||| ' cinco barras
+    0x00, 0x04, 0x02, 0x1F, 0x02, 0x04, 0x00, 0x00,  //!< caracter 0x05 '-     ' flechita  
+    0x00, 0x04, 0x08, 0x1F, 0x18, 0x14, 0x10, 0x00,  //!< caracter 0x06 '<-    ' flechita 
+    0x0E, 0x0E, 0x0F, 0x1F, 0x04, 0x0A, 0x11, 0x00   //!< caracter 0x07 '      ' muñequito
+    
+};
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
@@ -129,6 +149,29 @@ void LCD_Init(void)
 	while (LCD_Tout);
 
 	LCD_ReadBusy ();												// Esta rutina lee el bit de busy a ver si el LCD se liberó..
+}
+
+/**
+ *	\fn         LCD_InitCGRAM
+ *	\brief      Inicializa los caracteres de la CGRAM para el shield 2
+ *  \details    Iicioaliza los caracteres creados por el usuario, solo debe llamar
+ *              a esta función en el main y guardar sus caracteres en la tabla
+ *              LCD_CharactersCGRAM[ ]
+ *	\author     Nico?as Ferragamo
+ *	\date       1 de octubre de 2019
+*/
+void LCD_InitCGRAM (void)
+{
+    uint8_t i = 0;
+
+    LCD_WriteCMD(0x40); //envio a la CGRAM posicion 0 pero deberia ser 0 
+
+    for (i = 0; i < 64; i++) //rellena las filas de la cgram con el vector definido arriba
+    {
+        LCD_Char2LCD(LCD_CharactersCGRAM[i]);
+    }
+    LCD_WriteCMD(0x80);  //vuelve a DDRAM
+    LCD_SetCursor(0x00); //vuelve a posicion 1ra fila primer caracter
 }
 
 #endif

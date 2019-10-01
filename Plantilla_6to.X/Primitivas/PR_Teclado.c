@@ -77,10 +77,7 @@ const uint8_t teclas[4][4]={
  *** VARIABLES GLOBALES PUBLICAS
 *********************************************************************************************************/
 
-extern volatile uint8_t TDO_fila; 
-extern volatile uint8_t TDO_col;// Aquí guardará indice de matriz
-extern volatile uint8_t TDO_flag_kb;
-extern volatile uint8_t TDO_delay_kb;// Modificadas por hardware (interrupciones)
+
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
@@ -98,7 +95,7 @@ extern volatile uint8_t TDO_delay_kb;// Modificadas por hardware (interrupciones
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
 
-#if SHIELD_ACTIVO == __SHIELD2
+#if SHIELD_ACTIVO == __SHIELD1
 /** 
  *  \fn         uint8_t TDO_Tecla(void); 
  *  \brief      Debuelve la tecla seleccionada

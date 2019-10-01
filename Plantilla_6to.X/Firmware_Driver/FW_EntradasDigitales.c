@@ -17,8 +17,8 @@
 * Programmer(s) : NEF
 **********************************************************************************************************
 *  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
-*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c
-*   Agregar la variable extern volatile uint8_t ED_BufferEntradas en el archivo donde use ED_TECLA*
+*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c y en cualquier archivo que use 
+*   ED_TECLA*
 * 
 *********************************************************************************************************/
 
@@ -116,7 +116,7 @@ void ED_Debounce (void)
 				contador_estados[j]++; 
 				if(contador_estados[j]== ED_ACEPTAR_ESTADO)
 				{
-					ED_BufferEntradas ^= (0x01<<j);
+					ED_BufferEntradas ^= (0x01 << j);
 					contador_estados[j] = 0;
 				}
 			}
