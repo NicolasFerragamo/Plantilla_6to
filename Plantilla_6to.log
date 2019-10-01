@@ -1,0 +1,3 @@
+Circuit: _tic_timer0: CODE, 31656 0 28
+
+Fatal Error: Unknown SPICE device type "_" in "_pic_ini13: code, 31730 0 68"

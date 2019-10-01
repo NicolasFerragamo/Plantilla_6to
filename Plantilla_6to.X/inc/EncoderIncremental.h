@@ -50,15 +50,14 @@
 //Definiciones de Hardware cambiar si es necesario
     #define EDER_CANALA            PORTBbits.RB0
     #define EDER_CANALB            PORTBbits.RB1
-    #define EDER_SET_ENTRADA_A     TRISBbits.RB0 = ENTRADA;
-    #define EDER_SET_ENTRADA_B     TRISBbits.RB1 = ENTRADA;
     #define EDER_DELAY             30
 
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
 *********************************************************************************************************/
-
+    #define EDER_SET_ENTRADA_A     TRISBbits.RB0 = ENTRADA;
+    #define EDER_SET_ENTRADA_B     TRISBbits.RB1 = ENTRADA;
 /*********************************************************************************************************
  *** TIPO DE DATOS GLOBALES
 *********************************************************************************************************/

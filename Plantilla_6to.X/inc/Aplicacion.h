@@ -56,6 +56,11 @@
 #include "Display7Segmentos.h"
 #include "EntradasDigitales.h"
 #include "EncoderIncremental.h"
+#include "PWM.h"
+#include "EEPROM.h"
+#include "USART.h"
+#include "PR_ADC.h"
+#include "MacTimer.h"
 
 /*********************************************************************************************************
  *** DEFINES GLOBALES

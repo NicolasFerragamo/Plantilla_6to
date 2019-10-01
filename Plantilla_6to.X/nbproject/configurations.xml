@@ -22,6 +22,7 @@
         <itemPath>inc/EEPROM.h</itemPath>
         <itemPath>inc/USART.h</itemPath>
         <itemPath>inc/PWM.h</itemPath>
+        <itemPath>inc/MacTimer.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -66,6 +67,7 @@
         <itemPath>Primitivas/PR_EEPROM.c</itemPath>
         <itemPath>Primitivas/PR_USART.c</itemPath>
         <itemPath>Primitivas/PR_PWM.c</itemPath>
+        <itemPath>Primitivas/PR_MacTimer.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

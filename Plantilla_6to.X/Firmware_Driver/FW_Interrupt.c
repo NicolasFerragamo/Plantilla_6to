@@ -16,6 +16,7 @@
 #include "Display7Segmentos.h"
 #include "PR_Teclado.h"
 #include "EncoderIncremental.h"
+#include "MacTimer.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -81,6 +82,7 @@ void __interrupt() myISR(void)
         //DP_Tic();
         //EDER_Interrupt();
         //EDER_Tic();
+        //MCTMR_Analizar();
         
         
         //Su codigo por favor!!   

@@ -14,6 +14,7 @@
 #include "FW_InitTimer.h"
 #include <xc.h>
 #include "Tdatos.h"
+#include "BaseBoard.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -65,7 +66,7 @@
 */
 void Tmr0_Init(void)
 {
-    T0CONbits.TMR0ON  = 0;      /* apago el timer */
+    T0CONbits.TMR0ON  = OFF;      /* apago el timer */
     T0CONbits.T08BIT  = 1;      /* selecciono el timer en 8 bits */
     T0CONbits.T0CS    = 0;      /* el timer cuenta fosc/4 */
     T0CONbits.PSA     = 0;      /* habilito el preescaler */
@@ -74,8 +75,8 @@ void Tmr0_Init(void)
     T0CONbits.T0PS2   = 1;
     TMR0H             = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
     TMR0L             = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
-    INTCONbits.TMR0IE = 1;      /* Habilita la interrupción de timer 0 */
-    T0CONbits.TMR0ON  = 1;      /* Enciendo el timer */
+    INTCONbits.TMR0IE = ON;      /* Habilita la interrupción de timer 0 */
+    T0CONbits.TMR0ON  = ON;      /* Enciendo el timer */
 }
 
 /**
@@ -92,7 +93,7 @@ void Tmr0_Init(void)
 */
 void Tmr1_Init(void)
 {
-    T1CONbits.TMR1ON  = 0;     /*apago el timer */
+    T1CONbits.TMR1ON  = OFF;     /*apago el timer */
     T1CONbits.TMR1CS  = 0;     /*el timer cuenta fosc/4 */
     T1CONbits.nT1SYNC = 1;     /*Timer no sincronizado en forma externa */
     T1CONbits.T1OSCEN = 0;     /*T1OS shut off */
@@ -102,7 +103,7 @@ void Tmr1_Init(void)
     TMR1L             = 0x4F;  /*el timer contará 1200 fosc/4 * 1 = 12032 * 0,0833us */
     TMR1H	          = 0xFB;  /*en total aprox 99.96us  casi 100us */
     PIR1bits.TMR1IF   = 0;     /*flag de interrupción borrado */
-    PIE1bits.TMR1IE   = 1;     /*interrupción de timer 1 habilitada */
-    INTCONbits.PEIE   = 1;     /*Interrupciones de perifericos habilitadas */
+    PIE1bits.TMR1IE   = ON;     /*interrupción de timer 1 habilitada */
+    INTCONbits.PEIE   = ON;     /*Interrupciones de perifericos habilitadas */
     
 }
