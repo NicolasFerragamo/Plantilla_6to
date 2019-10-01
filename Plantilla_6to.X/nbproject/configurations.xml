@@ -18,6 +18,7 @@
         <itemPath>inc/PR_ADC.h</itemPath>
         <itemPath>inc/EntradasDigitales.h</itemPath>
         <itemPath>inc/Display7Segmentos.h</itemPath>
+        <itemPath>inc/EncoderIncremental.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -38,6 +39,7 @@
         <itemPath>Firmware_Driver/FW_Teclado.c</itemPath>
         <itemPath>Firmware_Driver/FW_EntradasDigitales.c</itemPath>
         <itemPath>Firmware_Driver/FW_Display7Segmentos.c</itemPath>
+        <itemPath>Firmware_Driver/FW_EncoderIncremental.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Init"
                      displayName="Firmware_Init"
@@ -46,6 +48,7 @@
         <itemPath>Firmware_Init/FW_InitKit.c</itemPath>
         <itemPath>Firmware_Init/FW_InitLCD.c</itemPath>
         <itemPath>Firmware_Init/FW_InitTeclado.c</itemPath>
+        <itemPath>Firmware_Init/FW_InitEncoderIncremetnal.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Primitivas" displayName="Primitivas" projectFiles="true">
         <itemPath>Primitivas/PR_LCD.c</itemPath>
@@ -53,6 +56,7 @@
         <itemPath>Primitivas/PR_ADC.c</itemPath>
         <itemPath>Primitivas/PR_EntradasDigitales.c</itemPath>
         <itemPath>Primitivas/PR_Display7Segmentos.c</itemPath>
+        <itemPath>Primitivas/PR_EncoderIncremental.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

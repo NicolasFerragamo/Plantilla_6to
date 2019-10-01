@@ -36,7 +36,7 @@
 ****************************************************************************************************/
 
 /****************************************************************************************************
- *** VARIABLES GLOBALES PRIVADAS AL MODULO    
+ * VARIABLES GLOBALES PRIVADAS AL MODULO    
  *   se declaran con static y se escriben en CamelCase y estan precedidas por la 
  *   identificación del módulo segida de un _ y usan _ para separar las palabras
  *   cuando tienen nombres compuestos
@@ -61,7 +61,9 @@ void main (void)
     Tmr0_Init ();    // Inicializa el timer 0
     ei ();           // Habilita las interrupciones globales
     while (1)
-    {   
+    {  
+      ED_Debounce();
+      DP_BarridoDisplay();
       Aplicacion ();
     }
 }

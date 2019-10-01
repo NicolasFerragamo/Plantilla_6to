@@ -1,6 +1,6 @@
-/*********************************************************************************************************
-*                                             Aplicacion
-*                               Codigo de la aplicacion a desarrollar
+/**********************************************************************************************************
+*                                               Encoder Incremental
+*						Contiene las librerias necesarias para manejar el encoder
 *
 *						<Copyright>
 *
@@ -10,33 +10,37 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                               <File description>
+*                                               FW_InitEncderIncremental.c
 *
-* Filename	: Aplicacion.c
+* Filename	: FW_InitEncderIncremental.c
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Es este archivo deve escribir el código de su programa
-*
-*
-*
+*  Note(s): Para poder usar esta libreria debe agregar las funciones EDER_Tic() y EDER_Interrupt
+* dentro de la interrupció del timer.
+ * También debe llamar a la funcion de inicialiación en el main()
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		Aplicacion.c
- * \brief		Escriba la función de su aplicación de forma breve
- * \details     Escriba la función de su aplicación de forma extensa
- * \date		13 de junio del 2019
+ * \file		FW_InitEncderIncremental.c
+ * \brief		Breve descripción del objetivo del Módulo
+ * \date		1 de octubre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
- * \version     1.0.0
+ * \version
 *********************************************************************************************************/
+
 
 /*********************************************************************************************************
  *** INCLUDES
 *********************************************************************************************************/
 
-#include "Aplicacion.h"
+#include <xc.h>
+#include "Tdatos.h"
+#include "BaseBoard.h"
+#include "EncoderIncremental.h"
+
+#if SHIELD_ACTIVO == __SHIELD1
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -61,6 +65,8 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
+volatile uint8_t EDER_Maximo = 0;
+volatile uint8_t EDER_Minimo = 0;
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
@@ -75,13 +81,31 @@
 *********************************************************************************************************/
 
 /**
-	\fn  		void Aplicacion (void)
-	\brief 		Funcion principal
- 	\author 	Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
- 	\date 		13 de junio del 2019
+	\fn  		void EDER_Init(uint8_t setMAX, uint8_t setMin);
+	\brief 		Funcion necesaria para inicializar el encoder, en la misma se define el 
+    * rango del encoder
+ 	\author 	
+ 	\date 		
+ 	\param [in]     setMAX    necesario para definir la posicion maxima
+    \param [in]     setMin    necesario para definir la posicion minima
+ 	\param [out] 	void
 */
-
-void Aplicacion (void)
-{
+    void EDER_Init(uint8_t setMAX, uint8_t setMin)
+    {
+        EDER_Maximo = setMAX;     //define el valor maximo del rango
+        EDER_Minimo = setMin;     //define el valor minimo del rango
     
-}
+        //Se configura la direccion del puerto, vea las definiciones de hardware
+        EDER_SET_ENTRADA_A
+        EDER_SET_ENTRADA_B
+              
+        INTCON2bits.RBPU    = 0;       //en caso de contar con pullUps utilizarlos 
+        INTCON2bits.INTEDG0 = 0;    //selecciona el tipo de flanco de la INT0
+        INTCON2bits.INTEDG1 = 0;    //selecciona el tipo de flanco de la INT0
+        INTCONbits.INT0IF   = 0;      //borra el flag de la INT0
+        INTCON3bits.INT1F   = 0;      //borra el flag de la INT1
+        INTCONbits.INT0IE   = 1;
+        INTCON3bits.INT1IE  = 1;
+    }
+
+#endif /* SHIELD_ACTIVO */

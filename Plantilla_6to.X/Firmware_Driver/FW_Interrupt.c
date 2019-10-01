@@ -15,6 +15,7 @@
 #include "EntradasDigitales.h"
 #include "Display7Segmentos.h"
 #include "PR_Teclado.h"
+#include "EncoderIncremental.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -74,8 +75,14 @@ void __interrupt() myISR(void)
         TMR0H  = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
         TMR0L  = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
         
-        ED_Tic();
-        DP_Tic();
+        // Descomente lo que va a utilizar
+        
+        //ED_Tic();
+        //DP_Tic();
+        //EDER_Interrupt();
+        //EDER_Tic();
+        
+        
         //Su codigo por favor!!   
     }
 }

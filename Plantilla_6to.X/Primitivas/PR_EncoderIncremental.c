@@ -1,6 +1,6 @@
-/*********************************************************************************************************
-*                                             Aplicacion
-*                               Codigo de la aplicacion a desarrollar
+/**********************************************************************************************************
+*                                               Encoder Incremental
+*						Contiene las librerias necesarias para manejar el encoder
 *
 *						<Copyright>
 *
@@ -10,33 +10,36 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                               <File description>
+*                                               PR_EncderIncremental.c
 *
-* Filename	: Aplicacion.c
+* Filename	: PR_InitEncderIncremental.c
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Es este archivo deve escribir el código de su programa
-*
-*
-*
+*  Note(s): Para poder usar esta libreria debe agregar las funciones EDER_Tic() y EDER_Interrupt
+* dentro de la interrupció del timer.
+ * También debe llamar a la funcion de inicialiación en el main()
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		Aplicacion.c
- * \brief		Escriba la función de su aplicación de forma breve
- * \details     Escriba la función de su aplicación de forma extensa
- * \date		13 de junio del 2019
+ * \file		PR_InitEncderIncremental.c
+ * \brief		Breve descripción del objetivo del Módulo
+ * \date		1 de octubre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
- * \version     1.0.0
+ * \version
 *********************************************************************************************************/
+
 
 /*********************************************************************************************************
  *** INCLUDES
 *********************************************************************************************************/
+#include <xc.h>
+#include "Tdatos.h"
+#include "BaseBoard.h"
+#include "EncoderIncremental.h"
 
-#include "Aplicacion.h"
+#if SHIELD_ACTIVO == __SHIELD1
 
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -61,6 +64,7 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
+volatile uint8_t EDER_Posicion = 0;
 
 /*********************************************************************************************************
  *** PROTOTIPO DE FUNCIONES PRIVADAS AL MODULO
@@ -75,13 +79,31 @@
 *********************************************************************************************************/
 
 /**
-	\fn  		void Aplicacion (void)
-	\brief 		Funcion principal
- 	\author 	Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
- 	\date 		13 de junio del 2019
+	\fn  		uint8_t EDER_GetPos(void);
+	\brief 		Llamando a esta funcion se obtiene un numero entre el valor MAX y el min
+ 	\author 	
+ 	\date 		
+ 	\param [in]     void   
+ 	\param [out]   posicion_encoder
+    \retunr        uint8_t
 */
-
-void Aplicacion (void)
-{
+    uint8_t EDER_GetPos(void)
+    {
+         return EDER_Posicion;
+    }
     
-}
+    
+    /**
+	\fn  		void EDER_PutPos(unsigned char posicion);
+	\brief 		Llamando a esta funcion se inicializa la posicion del encoder 
+ 	\author 	
+ 	\date 		
+ 	\param [in]    posicion  indica que posicion tiene el encoder fisicamente   
+ 	\param [out]   void
+    */
+    void EDER_PutPos(unsigned char posicion)
+    {
+        EDER_Posicion = posicion;
+    }
+
+#endif /* SHIELD_ACTIVO */
