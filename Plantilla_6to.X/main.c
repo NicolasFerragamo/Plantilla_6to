@@ -61,9 +61,10 @@ void main (void)
     Tmr0_Init ();    // Inicializa el timer 0
     ei ();           // Habilita las interrupciones globales
     while (1)
-    {  
-      ED_Debounce();
-      DP_BarridoDisplay();
+    { 
+      
+      //ED_Debounce();
+      //DP_BarridoDisplay();
       Aplicacion ();
     }
 }

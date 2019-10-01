@@ -20,6 +20,7 @@
         <itemPath>inc/Display7Segmentos.h</itemPath>
         <itemPath>inc/EncoderIncremental.h</itemPath>
         <itemPath>inc/EEPROM.h</itemPath>
+        <itemPath>inc/USART.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -50,6 +51,7 @@
         <itemPath>Firmware_Init/FW_InitLCD.c</itemPath>
         <itemPath>Firmware_Init/FW_InitTeclado.c</itemPath>
         <itemPath>Firmware_Init/FW_InitEncoderIncremetnal.c</itemPath>
+        <itemPath>Firmware_Init/FW_USARTInit.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Primitivas" displayName="Primitivas" projectFiles="true">
         <itemPath>Primitivas/PR_LCD.c</itemPath>
@@ -59,6 +61,7 @@
         <itemPath>Primitivas/PR_Display7Segmentos.c</itemPath>
         <itemPath>Primitivas/PR_EncoderIncremental.c</itemPath>
         <itemPath>Primitivas/PR_EEPROM.c</itemPath>
+        <itemPath>Primitivas/PR_USART.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

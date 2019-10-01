@@ -1,6 +1,6 @@
 /**********************************************************************************************************
-*                                               Entradas Digitales
-*						Contiene las funciones para manejar entradas digitales
+*                                              USART
+                    *						Módulo para trabajar con la USART
 *
 *						<Copyright>
 *
@@ -10,24 +10,23 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                                Entradas Digitales
+*                                               USART.h
 *
-* Filename	: EntradasDigitales.h
+* Filename	: USART.h
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Para poder usar llamar a la fucnión ED_Tic(); en la interrupción y a ED_Debounce();
-*   dentro de aplicacion();
-*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c y en cualquier archivo que use 
-*   ED_TECLA*
-* 
+*  Note(s):
+*
+*
+*
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		EntradasDigitales.h
- * \brief		Contiene las funciones para manejar entradas digitales
- * \date		30 de septiembre de 2019
+ * \file		USART.h
+ * \brief		Módulo para trabajar con la UART
+ * \date		1 de octubre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
 *********************************************************************************************************/
@@ -36,29 +35,18 @@
  *** MODULO
 *********************************************************************************************************/
 
-#ifndef ENTRADAS_DIGITALES_H
-#define ENTRADAS_DIGITALES_H
+#ifndef __USART_H
+#define __USART_H
 
-
+#if SHIELD_ACTIVO == __SHIELD2
 /*********************************************************************************************************
  *** INCLUDES GLOBALES
 *********************************************************************************************************/
-#include"Tdatos.h"
+#include "Tdatos.h"
 #include "BaseBoard.h"
-
-#if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
  *** DEFINES GLOBALES
 *********************************************************************************************************/
-
-#define		ED_ACEPTAR_ESTADO	10  //!< cantidad de veces que deve contar para validar el estado 
-#define		ED_ENTRADAS         4   //!< cantidad de entradas 
-#define     ED_TIC              1
-
-#define		ED_TECLA0  (uint8_t)((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
-#define		ED_TECLA1  (uint8_t)((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA2  (uint8_t)((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA3  (uint8_t)((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
@@ -71,54 +59,43 @@
 /*********************************************************************************************************
  *** VARIABLES GLOBALES 
 *********************************************************************************************************/
-extern volatile uint8_t ED_BufferEntradas;
-extern volatile uint8_t ED_Delay;
+
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
-*********************************************************************************************************/
-
-/**
-	\fn         void ED_CuentaPulsos(void);
-	\brief      Funcion primitiva de entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
-*/
-
-void ED_CuentaPulsos(void);
+**********************************************************************************************************/
 
 
 /**
-	\fn         void ED_Debounce(void)
-	\brief      Funcion para el debounce de las entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
+	\fn  		void USART_Init (void);
+	\brief 		Se encarga de inicializar la USART
+ 	\author 	
+ 	\date 		
+ 	\param [in]     void
+ 	\param [out] 	void
 */
-void ED_Debounce(void);
+void USART_Init (void);
 
 /**
-	\fn         void ED_Debounce(void);
-	\brief      Funcion para el debounce de las entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
+	\fn  		void USART_CharTx (uint8_t Dato);
+	\brief 		Se encarga de enviar un caracter por la USART
+ 	\author 	
+ 	\date 		
+ 	\param [in]     Dato   caracter a transmitir
+ 	\param [out] 	void
 */
-void ED_Debounce(void);
+void USART_CharTx (uint8_t Dato);
 
-void ED_Tic(void);
+/**
+	\fn  		void USART_MsgTx (uint8_t Dato);
+	\brief 		Se encarga de enviar un mensaje por la USART
+ 	\author 	
+ 	\date 		
+ 	\param [in]     *dato     mensaje a transmitir
+ *  \param [in]     longitud  longitud del mensaje a transmitir
+ 	\param [out] 	void
+*/
+void USART_MsgTx (uint8_t *dato, uint8_t longitud);
 
 #endif /* SHIELD_ACTIVO */
 
-#endif /* ENTRADAS_DIGITALES_H */
-
-
-
-
-
+#endif /* __USART_H */
