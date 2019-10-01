@@ -17,6 +17,7 @@
         <itemPath>inc/PR_Teclado.h</itemPath>
         <itemPath>inc/PR_ADC.h</itemPath>
         <itemPath>inc/EntradasDigitales.h</itemPath>
+        <itemPath>inc/Display7Segmentos.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -36,6 +37,7 @@
         <itemPath>Firmware_Driver/FW_LCD.c</itemPath>
         <itemPath>Firmware_Driver/FW_Teclado.c</itemPath>
         <itemPath>Firmware_Driver/FW_EntradasDigitales.c</itemPath>
+        <itemPath>Firmware_Driver/FW_Display7Segmentos.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Firmware_Init"
                      displayName="Firmware_Init"
@@ -50,6 +52,7 @@
         <itemPath>Primitivas/PR_Teclado.c</itemPath>
         <itemPath>Primitivas/PR_ADC.c</itemPath>
         <itemPath>Primitivas/PR_EntradasDigitales.c</itemPath>
+        <itemPath>Primitivas/PR_Display7Segmentos.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

@@ -53,6 +53,8 @@
 #include "FW_LCD.h"
 #include "FW_Teclado.h"
 #include "PR_Teclado.h"
+#include "Display7Segmentos.h"
+#include "EntradasDigitales.h"
 
 /*********************************************************************************************************
  *** DEFINES GLOBALES

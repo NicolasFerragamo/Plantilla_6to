@@ -1,31 +1,29 @@
 /**********************************************************************************************************
-*                                               Entradas Digitales
-*						Contiene las funciones para manejar entradas digitales
+*                                               Display 7 Segmentos
+*                                       Manejo del display 7 segmentos 
 *
-*						<Copyright>
+*                                        <Copyright>
 *
-*						<Copyright or distribution terms>
+*                           <Copyright or distribution terms>
 *
 *
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                                Entradas Digitales
+*                                               Display7Segmentos.h
 *
-* Filename	: EntradasDigitales.h
+* Filename	: Display7Segmentos.h
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
-*   Incluír el archivo EntradasDigitaes.h en el archivo FW_Interrupt.c
-*   Agregar la variable extern uint8_t ED_BufferEntradas en el archivo donde use ED_TECLA*
-* 
+*  Note(s): Para poder usar este módulo debe llamar a la función DP_BarridoDisplay (); dentro de 
+*  la interrupcion
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		EntradasDigitales.h
- * \brief		Contiene las funciones para manejar entradas digitales
+ * \file		Display7Segmentos.h
+ * \brief		Módulo para el manejo de los display 7 segmentos
  * \date		30 de septiembre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
@@ -35,27 +33,32 @@
  *** MODULO
 *********************************************************************************************************/
 
-#ifndef ENTRADAS_DIGITALES_H
-#define ENTRADAS_DIGITALES_H
+#ifndef __DISPLAY_7_SEGMENTOS_H
+#define __DISPLAY_7_SEGMENTOS_H
 
-#if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
  *** INCLUDES GLOBALES
 *********************************************************************************************************/
-#include"Tdatos.h"
+#include "Tdatos.h"
+#include "BaseBoard.h"
 
+#if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
  *** DEFINES GLOBALES
 *********************************************************************************************************/
+#define 	DP_DIGITOS		4  //!< Números de diplays
 
-#define		ED_ACEPTAR_ESTADO	10  //!< cantidad de veces que deve contar para validar el estado 
-#define		ED_ENTRADAS         4   //!< cantidad de entradas 
+#define DP_DISP1   LATAbits.LA4
+#define DP_DISP2   LATAbits.LA5
+#define DP_DISP3   LATEbits.LE0
+#define DP_DISP4   LATEbits.LE1
 
 
-#define		ED_TECLA0 ((ED_BufferEntradas) & 0x01)        //!< macros para las teclas de entrada 
-#define		ED_TECLA1 ((ED_BufferEntradas >> 1) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA2 ((ED_BufferEntradas >> 2) & 0x01)   //!< macros para las teclas de entrada 
-#define		ED_TECLA3 ((ED_BufferEntradas >> 3) & 0x01)   //!< macros para las teclas de entrada 
+#define DP_SEGMENTOA LATAbits.LA0
+#define DP_SEGMENTOB LATAbits.LA0
+#define DP_SEGMENTOC LATAbits.LA0
+#define DP_SEGMENTOD LATAbits.LA0
+#define DP_DOT       LATEbits.LE2
 
 /*********************************************************************************************************
  *** MACROS GLOBALES
@@ -66,43 +69,37 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
- *** VARIABLES GLOBALES 
+ *** VARIABLES GLOBALES
+
 *********************************************************************************************************/
-extern volatile uint8_t ED_BufferEntradas;
+extern volatile uint8_t DP_msgDisplay[DP_DIGITOS];			
 
 /*********************************************************************************************************
  *** PROTOTIPOS DE FUNCIONES GLOBALES
-*********************************************************************************************************/
-
-/**
-	\fn         void ED_CuentaPulsos(void);
-	\brief      Funcion primitiva de entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
-*/
-
-void ED_CuentaPulsos(void);
+**********************************************************************************************************/
 
 
 /**
-	\fn         void ED_Debounce(void)
-	\brief      Funcion para el debounce de las entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
+	\fn  		void DP_BarridoDisplay (void);
+	\brief 		Realiza el barrido de los displays
+ 	\author 	Nicolás Exequiel Ferragamo
+ 	\date 		30 de septiembre de 2019
+ 	\param [in] 	void
+ 	\param [out] 	void
 */
-void ED_Debounce(void);
+void DP_BarridoDisplay (void);
 
-#endif /* SHIELD_ACTIVO */
+/**
+	\fn  		void DP_Display_bcd (uint16_t, uint8_t);
+	\brief 		Se encarga de descomponer el número y enviarlo a cada display
+ 	\author 	Nicolás Exequiel Ferragamo
+ 	\date 		30 de septiembre de 2019
+ 	\param [in]     valor a mostrar en los displays
+    \param [in]     Número de display
+ 	\param [out] 	void
+*/
+void DP_DisplayBCD(uint16_t valor, uint8_t dsp);
 
-#endif /* ENTRADAS_DIGITALES_H */
+#endif
 
-
-
-
-
+#endif /* __DISPLAY_7_SEGMENTOS_H */ 

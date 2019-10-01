@@ -1,6 +1,6 @@
 /**********************************************************************************************************
-*                                               Entradas Digitales
-*						Contiene las funciones para manejar entradas digitales
+*                                               Display 7 Segmentos
+*                                       Manejo del display 7 segmentos 
 *
 *						<Copyright>
 *
@@ -10,20 +10,22 @@
 *********************************************************************************************************/
 
 /*********************************************************************************************************
-*                                                Entradas Digitales
+*                                               PR_Display7Segmentos.c
 *
-* Filename	: PR_EntradasDigitales.c
+* Filename	: PR_Display7Segmentos.c
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Para poder usar llamar a la fucnión void ED_Debounce(void);
-* 
+*  Note(s):
+*
+*
+*
 *********************************************************************************************************/
 
 /*********************************************************************************************************
  *
- * \file		PR_EntradasDigitales
- * \brief		Contiene las funciones para manejar entradas digitales
+ * \file		PR_Display7Segmentos.c
+ * \brief		Módulo para el manejo de los display 7 segmentos
  * \date		30 de septiembre de 2019
  * \author		Nicolas Ferragamo nferragamo@est.frba.utn.edu.ar
  * \version     1.0.0
@@ -32,11 +34,8 @@
 /*********************************************************************************************************
  *** INCLUDES
 *********************************************************************************************************/
-
-#include <xc.h>
-#include "Tdatos.h"
-#include "BaseBoard.h"
-#include "EntradasDigitales.h"
+#include "xc.h"
+#include "Display7Segmentos.h"
 
 #if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
@@ -54,15 +53,13 @@
 /*********************************************************************************************************
  *** TABLAS PRIVADAS AL MODULO
 *********************************************************************************************************/
+uint8_t Tabla_Digitos_BCD_7seg[ ] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PUBLICAS
- *   se escriben en CamelCase y estan precedidas por la identificación del 
- *   módulo segida de un _ 
- *   ej: MEM_POOL  Mem_PoolHeap; 
 *********************************************************************************************************/
-volatile uint8_t ED_BufferEntradas = 0 ;  //!< aca por cada bit me indica el estado de una tecla
-        
+volatile uint8_t DP_msgDisplay[DP_DIGITOS] = 0;	
+
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
 *********************************************************************************************************/
@@ -79,63 +76,46 @@ volatile uint8_t ED_BufferEntradas = 0 ;  //!< aca por cada bit me indica el est
  *** FUNCIONES GLOBALES AL MODULO
 *********************************************************************************************************/
 
-
 /**
-	\fn         void ED_CuentaPulsos(void);
-	\brief      Funcion primitiva de entradas digitales 
- 	\author     Nicolas Ferragamo
- 	\date       30 de septiembre de 2019
- 	\param      [in] void
- 	\param      [out] void
-	\return     void
+	\fn  		void DP_Display_bcd (uint16_t, uint8_t);
+	\brief 		Se encarga de descomponer el número y enviarlo a cada display
+ 	\author 	Nicolás Exequiel Ferragamo
+ 	\date 		30 de septiembre de 2019
+ 	\param [in]     valor a mostrar en los displays
+    \param [in]     0 si trabaja con los 4 display y otros númneros si trabaja con un solo display
+ 	\param [out] 	void
 */
-void ED_CuentaPulsos(void)
+
+void DP_DisplayBCD(uint16_t valor, uint8_t dsp)
 {
-    static uint8_t antkey0 = 0; 
-    static uint8_t antkey1 = 0;
-    static uint8_t antkey2 = 0;
-    static uint8_t antkey3 = 0;
+    static uint8_t i = 0;
     
-	if(ED_TECLA0 && !antkey0)
+	if(!dsp)
 	{
-		antkey0 =! antkey0;
-		// hago lo que tenga que hacer
+		for(i=0; i < DP_DIGITOS; i++)
+		{
+			DP_msgDisplay[i] = Tabla_Digitos_BCD_7seg[valor%10];
+			valor/=10;
+		}
 	}
-	else if(!ED_TECLA0 && antkey0)
+	else
 	{
-		antkey0 =! antkey0;
-	}
-
-	if(ED_TECLA1 && !antkey1)
-	{
-		antkey1 =! antkey1;
-		// hago lo que tenga que hacer
-	}
-	else if(!ED_TECLA1 && antkey1)
-	{
-		antkey1 =! antkey1;
-	}
-
-	if(ED_TECLA2 && !antkey2)
-	{
-		antkey2 =! antkey2;
-		// hago lo que tenga que hacer
-	}
-	else if(!ED_TECLA2 && antkey2)
-	{
-		antkey2 =! antkey2;
-	}
-    
-    if(ED_TECLA3 && !antkey3)
-	{
-		antkey3 =! antkey3;
-		// hago lo que tenga que hacer
-	}
-	else if(!ED_TECLA3 && antkey3)
-	{
-		antkey3 =! antkey3;
-	}
-
+        switch (dsp)
+        {
+            case 1 : 
+                DP_msgDisplay[0] = Tabla_Digitos_BCD_7seg[valor%10];
+                break;
+            case 2 : 
+                DP_msgDisplay[1] = Tabla_Digitos_BCD_7seg[valor%10];
+                break;
+            case 3 : 
+                DP_msgDisplay[2] = Tabla_Digitos_BCD_7seg[valor%10];
+                break;
+            case 4 : 
+                DP_msgDisplay[3] = Tabla_Digitos_BCD_7seg[valor%10];
+                break;    
+        }
+    }
 }
 
-#endif /* SHIELD_ACTIVO */
+#endif

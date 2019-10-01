@@ -62,8 +62,7 @@
  *   se escriben en CamelCase y estan precedidas por la identificación del 
  *   módulo segida de un _ 
  *   ej: MEM_POOL  Mem_PoolHeap; 
-*********************************************************************************************************/
-extern volatile uint8_t ED_BufferEntradas; 
+*********************************************************************************************************/ 
         
 /*********************************************************************************************************
  *** VARIABLES GLOBALES PRIVADAS AL MODULO
