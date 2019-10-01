@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Driver/FW_LCD.c Firmware_Driver/FW_Teclado.c Firmware_Driver/FW_EntradasDigitales.c Firmware_Driver/FW_Display7Segmentos.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Firmware_Init/FW_InitLCD.c Firmware_Init/FW_InitTeclado.c Primitivas/PR_LCD.c Primitivas/PR_Teclado.c Primitivas/PR_ADC.c Primitivas/PR_EntradasDigitales.c Primitivas/PR_Display7Segmentos.c main.c Firmware_Init/FW_InitEncoderIncremetnal.c Primitivas/PR_EncoderIncremental.c Firmware_Driver/FW_EncoderIncremental.c Primitivas/PR_EEPROM.c Firmware_Init/FW_USARTInit.c Primitivas/PR_USART.c Firmware_Init/FW_PWMInit.c Primitivas/PR_PWM.c Firmware_Driver/FW_PWM.c
+SOURCEFILES_QUOTED_IF_SPACED=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Driver/FW_LCD.c Firmware_Driver/FW_Teclado.c Firmware_Driver/FW_EntradasDigitales.c Firmware_Driver/FW_Display7Segmentos.c Firmware_Driver/FW_EncoderIncremental.c Firmware_Driver/FW_PWM.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Firmware_Init/FW_InitLCD.c Firmware_Init/FW_InitTeclado.c Firmware_Init/FW_InitEncoderIncremetnal.c Firmware_Init/FW_USARTInit.c Firmware_Init/FW_PWMInit.c Primitivas/PR_LCD.c Primitivas/PR_Teclado.c Primitivas/PR_EntradasDigitales.c Primitivas/PR_Display7Segmentos.c Primitivas/PR_EncoderIncremental.c Primitivas/PR_EEPROM.c Primitivas/PR_USART.c Primitivas/PR_PWM.c main.c Primitivas/PR_MacTimer.c Primitivas/PR_ADC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1 ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1 ${OBJECTDIR}/Primitivas/PR_Teclado.p1 ${OBJECTDIR}/Primitivas/PR_ADC.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1 ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 ${OBJECTDIR}/Primitivas/PR_USART.p1 ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 ${OBJECTDIR}/Primitivas/PR_PWM.p1 ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1.d ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d ${OBJECTDIR}/Primitivas/PR_LCD.p1.d ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d ${OBJECTDIR}/Primitivas/PR_USART.p1.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d ${OBJECTDIR}/Primitivas/PR_PWM.p1.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1 ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1 ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1 ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1 ${OBJECTDIR}/Primitivas/PR_Teclado.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1 ${OBJECTDIR}/Primitivas/PR_USART.p1 ${OBJECTDIR}/Primitivas/PR_PWM.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 ${OBJECTDIR}/Primitivas/PR_ADC.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1.d ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1.d ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1.d ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d ${OBJECTDIR}/Primitivas/PR_LCD.p1.d ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1.d ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d ${OBJECTDIR}/Primitivas/PR_USART.p1.d ${OBJECTDIR}/Primitivas/PR_PWM.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1 ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1 ${OBJECTDIR}/Primitivas/PR_Teclado.p1 ${OBJECTDIR}/Primitivas/PR_ADC.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1 ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 ${OBJECTDIR}/Primitivas/PR_USART.p1 ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 ${OBJECTDIR}/Primitivas/PR_PWM.p1 ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1
+OBJECTFILES=${OBJECTDIR}/Aplicacion/Aplicacion.p1 ${OBJECTDIR}/Firmware_Driver/FW_Interrupt.p1 ${OBJECTDIR}/Firmware_Driver/FW_LCD.p1 ${OBJECTDIR}/Firmware_Driver/FW_Teclado.p1 ${OBJECTDIR}/Firmware_Driver/FW_EntradasDigitales.p1 ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1 ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1 ${OBJECTDIR}/Firmware_Init/FW_InitKit.p1 ${OBJECTDIR}/Firmware_Init/FW_InitLCD.p1 ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1 ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 ${OBJECTDIR}/Primitivas/PR_LCD.p1 ${OBJECTDIR}/Primitivas/PR_Teclado.p1 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1 ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1 ${OBJECTDIR}/Primitivas/PR_USART.p1 ${OBJECTDIR}/Primitivas/PR_PWM.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 ${OBJECTDIR}/Primitivas/PR_ADC.p1
 
 # Source Files
-SOURCEFILES=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Driver/FW_LCD.c Firmware_Driver/FW_Teclado.c Firmware_Driver/FW_EntradasDigitales.c Firmware_Driver/FW_Display7Segmentos.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Firmware_Init/FW_InitLCD.c Firmware_Init/FW_InitTeclado.c Primitivas/PR_LCD.c Primitivas/PR_Teclado.c Primitivas/PR_ADC.c Primitivas/PR_EntradasDigitales.c Primitivas/PR_Display7Segmentos.c main.c Firmware_Init/FW_InitEncoderIncremetnal.c Primitivas/PR_EncoderIncremental.c Firmware_Driver/FW_EncoderIncremental.c Primitivas/PR_EEPROM.c Firmware_Init/FW_USARTInit.c Primitivas/PR_USART.c Firmware_Init/FW_PWMInit.c Primitivas/PR_PWM.c Firmware_Driver/FW_PWM.c
+SOURCEFILES=Aplicacion/Aplicacion.c Firmware_Driver/FW_Interrupt.c Firmware_Driver/FW_LCD.c Firmware_Driver/FW_Teclado.c Firmware_Driver/FW_EntradasDigitales.c Firmware_Driver/FW_Display7Segmentos.c Firmware_Driver/FW_EncoderIncremental.c Firmware_Driver/FW_PWM.c Firmware_Init/FW_InitTimer.c Firmware_Init/FW_InitKit.c Firmware_Init/FW_InitLCD.c Firmware_Init/FW_InitTeclado.c Firmware_Init/FW_InitEncoderIncremetnal.c Firmware_Init/FW_USARTInit.c Firmware_Init/FW_PWMInit.c Primitivas/PR_LCD.c Primitivas/PR_Teclado.c Primitivas/PR_EntradasDigitales.c Primitivas/PR_Display7Segmentos.c Primitivas/PR_EncoderIncremental.c Primitivas/PR_EEPROM.c Primitivas/PR_USART.c Primitivas/PR_PWM.c main.c Primitivas/PR_MacTimer.c Primitivas/PR_ADC.c
 
 
 
@@ -142,6 +142,22 @@ ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1: Firmware_Driver/FW_Display
 	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.d ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1: Firmware_Driver/FW_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 Firmware_Driver/FW_EncoderIncremental.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Driver/FW_PWM.p1: Firmware_Driver/FW_PWM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 Firmware_Driver/FW_PWM.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_PWM.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1: Firmware_Init/FW_InitTimer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
 	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d 
@@ -174,6 +190,30 @@ ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1: Firmware_Init/FW_InitTeclado.c  nb
 	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.d ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1: Firmware_Init/FW_InitEncoderIncremetnal.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 Firmware_Init/FW_InitEncoderIncremetnal.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1: Firmware_Init/FW_USARTInit.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 Firmware_Init/FW_USARTInit.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1: Firmware_Init/FW_PWMInit.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 Firmware_Init/FW_PWMInit.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/Primitivas/PR_LCD.p1: Primitivas/PR_LCD.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
@@ -189,14 +229,6 @@ ${OBJECTDIR}/Primitivas/PR_Teclado.p1: Primitivas/PR_Teclado.c  nbproject/Makefi
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_Teclado.p1 Primitivas/PR_Teclado.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_Teclado.d ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Primitivas/PR_ADC.p1: Primitivas/PR_ADC.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Primitivas" 
-	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
-	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_ADC.p1 Primitivas/PR_ADC.c 
-	@-${MV} ${OBJECTDIR}/Primitivas/PR_ADC.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -214,22 +246,6 @@ ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1: Primitivas/PR_Display7Segmentos
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.d ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1: Firmware_Init/FW_InitEncoderIncremetnal.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 Firmware_Init/FW_InitEncoderIncremetnal.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1: Primitivas/PR_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d 
@@ -237,14 +253,6 @@ ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1: Primitivas/PR_EncoderIncrement
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 Primitivas/PR_EncoderIncremental.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.d ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1: Firmware_Driver/FW_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 Firmware_Driver/FW_EncoderIncremental.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1: Primitivas/PR_EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -254,14 +262,6 @@ ${OBJECTDIR}/Primitivas/PR_EEPROM.p1: Primitivas/PR_EEPROM.c  nbproject/Makefile
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EEPROM.d ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1: Firmware_Init/FW_USARTInit.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 Firmware_Init/FW_USARTInit.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_USART.p1: Primitivas/PR_USART.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_USART.p1.d 
@@ -269,14 +269,6 @@ ${OBJECTDIR}/Primitivas/PR_USART.p1: Primitivas/PR_USART.c  nbproject/Makefile-$
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_USART.p1 Primitivas/PR_USART.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_USART.d ${OBJECTDIR}/Primitivas/PR_USART.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1: Firmware_Init/FW_PWMInit.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 Firmware_Init/FW_PWMInit.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_PWM.p1: Primitivas/PR_PWM.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -286,13 +278,29 @@ ${OBJECTDIR}/Primitivas/PR_PWM.p1: Primitivas/PR_PWM.c  nbproject/Makefile-${CND
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_PWM.d ${OBJECTDIR}/Primitivas/PR_PWM.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Firmware_Driver/FW_PWM.p1: Firmware_Driver/FW_PWM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 Firmware_Driver/FW_PWM.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_PWM.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_MacTimer.p1: Primitivas/PR_MacTimer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 Primitivas/PR_MacTimer.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_MacTimer.d ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_ADC.p1: Primitivas/PR_ADC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_ADC.p1 Primitivas/PR_ADC.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_ADC.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/Aplicacion/Aplicacion.p1: Aplicacion/Aplicacion.c  nbproject/Makefile-${CND_CONF}.mk
@@ -343,6 +351,22 @@ ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1: Firmware_Driver/FW_Display
 	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.d ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_Display7Segmentos.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1: Firmware_Driver/FW_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 Firmware_Driver/FW_EncoderIncremental.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Driver/FW_PWM.p1: Firmware_Driver/FW_PWM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 Firmware_Driver/FW_PWM.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_PWM.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1: Firmware_Init/FW_InitTimer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
 	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitTimer.p1.d 
@@ -375,6 +399,30 @@ ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1: Firmware_Init/FW_InitTeclado.c  nb
 	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.d ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitTeclado.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1: Firmware_Init/FW_InitEncoderIncremetnal.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 Firmware_Init/FW_InitEncoderIncremetnal.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1: Firmware_Init/FW_USARTInit.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 Firmware_Init/FW_USARTInit.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1: Firmware_Init/FW_PWMInit.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
+	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 Firmware_Init/FW_PWMInit.c 
+	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/Primitivas/PR_LCD.p1: Primitivas/PR_LCD.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_LCD.p1.d 
@@ -390,14 +438,6 @@ ${OBJECTDIR}/Primitivas/PR_Teclado.p1: Primitivas/PR_Teclado.c  nbproject/Makefi
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_Teclado.p1 Primitivas/PR_Teclado.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_Teclado.d ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_Teclado.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Primitivas/PR_ADC.p1: Primitivas/PR_ADC.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Primitivas" 
-	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
-	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_ADC.p1 Primitivas/PR_ADC.c 
-	@-${MV} ${OBJECTDIR}/Primitivas/PR_ADC.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_EntradasDigitales.p1: Primitivas/PR_EntradasDigitales.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -415,22 +455,6 @@ ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1: Primitivas/PR_Display7Segmentos
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.d ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_Display7Segmentos.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1: Firmware_Init/FW_InitEncoderIncremetnal.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1 Firmware_Init/FW_InitEncoderIncremetnal.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.d ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_InitEncoderIncremetnal.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1: Primitivas/PR_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d 
@@ -438,14 +462,6 @@ ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1: Primitivas/PR_EncoderIncrement
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1 Primitivas/PR_EncoderIncremental.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.d ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1: Firmware_Driver/FW_EncoderIncremental.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1 Firmware_Driver/FW_EncoderIncremental.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.d ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_EncoderIncremental.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_EEPROM.p1: Primitivas/PR_EEPROM.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -455,14 +471,6 @@ ${OBJECTDIR}/Primitivas/PR_EEPROM.p1: Primitivas/PR_EEPROM.c  nbproject/Makefile
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_EEPROM.d ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_EEPROM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1: Firmware_Init/FW_USARTInit.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1 Firmware_Init/FW_USARTInit.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.d ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_USARTInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/Primitivas/PR_USART.p1: Primitivas/PR_USART.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
 	@${RM} ${OBJECTDIR}/Primitivas/PR_USART.p1.d 
@@ -470,14 +478,6 @@ ${OBJECTDIR}/Primitivas/PR_USART.p1: Primitivas/PR_USART.c  nbproject/Makefile-$
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_USART.p1 Primitivas/PR_USART.c 
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_USART.d ${OBJECTDIR}/Primitivas/PR_USART.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1: Firmware_Init/FW_PWMInit.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Init" 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1 Firmware_Init/FW_PWMInit.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.d ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Init/FW_PWMInit.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Primitivas/PR_PWM.p1: Primitivas/PR_PWM.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Primitivas" 
@@ -487,13 +487,29 @@ ${OBJECTDIR}/Primitivas/PR_PWM.p1: Primitivas/PR_PWM.c  nbproject/Makefile-${CND
 	@-${MV} ${OBJECTDIR}/Primitivas/PR_PWM.d ${OBJECTDIR}/Primitivas/PR_PWM.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Firmware_Driver/FW_PWM.p1: Firmware_Driver/FW_PWM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/Firmware_Driver" 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
-	@${RM} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1 Firmware_Driver/FW_PWM.c 
-	@-${MV} ${OBJECTDIR}/Firmware_Driver/FW_PWM.d ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Firmware_Driver/FW_PWM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_MacTimer.p1: Primitivas/PR_MacTimer.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_MacTimer.p1 Primitivas/PR_MacTimer.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_MacTimer.d ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_MacTimer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Primitivas/PR_ADC.p1: Primitivas/PR_ADC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Primitivas" 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
+	@${RM} ${OBJECTDIR}/Primitivas/PR_ADC.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -mrom=default,-0-1fff,-2006-2007,-2016-2017 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x2000  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Primitivas/PR_ADC.p1 Primitivas/PR_ADC.c 
+	@-${MV} ${OBJECTDIR}/Primitivas/PR_ADC.d ${OBJECTDIR}/Primitivas/PR_ADC.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Primitivas/PR_ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

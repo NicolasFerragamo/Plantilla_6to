@@ -15,13 +15,14 @@
         <itemPath>inc/BaseBoard.h</itemPath>
         <itemPath>inc/FW_Teclado.h</itemPath>
         <itemPath>inc/PR_Teclado.h</itemPath>
-        <itemPath>inc/PR_ADC.h</itemPath>
         <itemPath>inc/EntradasDigitales.h</itemPath>
         <itemPath>inc/Display7Segmentos.h</itemPath>
         <itemPath>inc/EncoderIncremental.h</itemPath>
         <itemPath>inc/EEPROM.h</itemPath>
         <itemPath>inc/USART.h</itemPath>
         <itemPath>inc/PWM.h</itemPath>
+        <itemPath>inc/MacTimer.h</itemPath>
+        <itemPath>inc/PR_ADC.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -59,13 +60,14 @@
       <logicalFolder name="Primitivas" displayName="Primitivas" projectFiles="true">
         <itemPath>Primitivas/PR_LCD.c</itemPath>
         <itemPath>Primitivas/PR_Teclado.c</itemPath>
-        <itemPath>Primitivas/PR_ADC.c</itemPath>
         <itemPath>Primitivas/PR_EntradasDigitales.c</itemPath>
         <itemPath>Primitivas/PR_Display7Segmentos.c</itemPath>
         <itemPath>Primitivas/PR_EncoderIncremental.c</itemPath>
         <itemPath>Primitivas/PR_EEPROM.c</itemPath>
         <itemPath>Primitivas/PR_USART.c</itemPath>
         <itemPath>Primitivas/PR_PWM.c</itemPath>
+        <itemPath>Primitivas/PR_MacTimer.c</itemPath>
+        <itemPath>Primitivas/PR_ADC.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

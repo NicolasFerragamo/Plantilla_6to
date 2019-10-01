@@ -16,7 +16,7 @@
 #include "Display7Segmentos.h"
 #include "PR_Teclado.h"
 #include "EncoderIncremental.h"
-//#include "MacTimer.h"
+#include "MacTimer.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
