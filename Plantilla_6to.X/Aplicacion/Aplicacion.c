@@ -83,5 +83,6 @@
 
 void Aplicacion (void)
 {
-    
+    ED_Debounce();
+    DP_BarridoDisplay();
 }

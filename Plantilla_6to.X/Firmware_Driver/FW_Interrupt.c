@@ -70,7 +70,12 @@ void __interrupt() myISR(void)
     
     if(TMR0IF)
     {         //la interrupcion ocurre cada 1 segundo.
-        TMR0IF=0;       //se reinicia el timer y su interrupcion.
+        TMR0IF = 0;       //se reinicia el timer y su interrupcion.
+        TMR0H  = 0xFF;   /* en total aprox 1.0022ms  casi 1ms */
+        TMR0L  = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
+        
+        ED_Tic();
+        DP_Tic();
         //Su codigo por favor!!   
     }
 }
