@@ -14,6 +14,9 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../../../AED_5/git/Plantilla_5to/Plantilla_5to.X/Primitivas</sourceRootElem>
+                <sourceRootElem>../../../../AED_5/git/Plantilla_5to/Plantilla_5to.X/Firmware_Driver</sourceRootElem>
+                <sourceRootElem>../../../../AED_5/git/Plantilla_5to/Plantilla_5to.X/inc</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
