@@ -17,6 +17,8 @@
 #include "PR_Teclado.h"
 #include "EncoderIncremental.h"
 #include "MacTimer.h"
+#include "PR_LCD.h"
+#include "FW_LCD.h"
 
 /****************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
@@ -77,12 +79,16 @@ void __interrupt() myISR(void)
         TMR0L  = 209;    /* el timer contará 47 fosc/4 * 256 = 12032 * 0,0833us */
         
         // Descomente lo que va a utilizar
-        
+        //LCD_TicLCD();
         //ED_Tic();
         //DP_Tic();
         //EDER_Interrupt();
         //EDER_Tic();
         //MCTMR_Analizar();
+        //TDO_MarcaTecla ();		
+        //TDO_Tic();
+        //MCTMR_Analizar();
+        
         
         
         //Su codigo por favor!!   

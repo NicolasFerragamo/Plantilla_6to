@@ -59,6 +59,13 @@ void main (void)
 {
     Kit_Init ();     // Inicializa los puertos
     Tmr0_Init ();    // Inicializa el timer 0
+    //Tmr1_Init();
+    //EDER_Init(255,0);
+    //LCD_InitCGRAM();
+    //LCD_Init();
+    //TDO_Init();
+    //PWM_Init();
+    //USART_Init();
     ei ();           // Habilita las interrupciones globales
     while (1)
     { 
