@@ -41,7 +41,6 @@
 #include "BaseBoard.h"
 #include "EntradasDigitales.h"
 
-#if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
 *********************************************************************************************************/
@@ -157,4 +156,4 @@ void ED_Tic (void)
         ED_Delay = ED_TIC;
     }
 }
-#endif /* SHIELD_ACTIVO */
+

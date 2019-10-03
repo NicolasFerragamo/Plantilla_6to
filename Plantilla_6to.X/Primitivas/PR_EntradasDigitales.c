@@ -41,7 +41,6 @@
 #include "BaseBoard.h"
 #include "EntradasDigitales.h"
 
-#if SHIELD_ACTIVO == __SHIELD1
 /*********************************************************************************************************
  *** DEFINES PRIVADOS AL MODULO
 *********************************************************************************************************/
@@ -141,4 +140,3 @@ void ED_CuentaPulsos(void)
 
 }
 
-#endif /* SHIELD_ACTIVO */

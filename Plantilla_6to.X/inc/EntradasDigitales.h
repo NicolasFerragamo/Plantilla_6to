@@ -46,7 +46,7 @@
 #include"Tdatos.h"
 #include "BaseBoard.h"
 
-#if SHIELD_ACTIVO == __SHIELD1
+
 /*********************************************************************************************************
  *** DEFINES GLOBALES
 *********************************************************************************************************/
@@ -102,7 +102,7 @@ void ED_CuentaPulsos(void);
 void ED_Debounce(void);
 
 /**
-	\fn         void ED_Debounce(void);
+	\fn         void ED_Tic(void);
 	\brief      Funcion para el debounce de las entradas digitales 
  	\author     Nicolas Ferragamo
  	\date       30 de septiembre de 2019
@@ -110,11 +110,10 @@ void ED_Debounce(void);
  	\param      [out] void
 	\return     void
 */
-void ED_Debounce(void);
 
 void ED_Tic(void);
 
-#endif /* SHIELD_ACTIVO */
+
 
 #endif /* ENTRADAS_DIGITALES_H */
 
