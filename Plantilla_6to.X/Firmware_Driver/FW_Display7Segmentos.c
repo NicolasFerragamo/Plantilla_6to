@@ -88,40 +88,37 @@ volatile uint8_t DP_Delay = DP_TIC;
 */
 void DP_BarridoDisplay (void)
 {
-    if(!DP_Delay)
-    {
-        static uint8_t digito = 0;
+    static uint8_t digito = 0;
 
-        DP_DISP1 = OFF; 
-        DP_DISP2 = OFF; 
-        DP_DISP3 = OFF;
-        DP_DISP4 = OFF; 
+    DP_DISP1 = OFF; 
+    DP_DISP2 = OFF; 
+    DP_DISP3 = OFF;
+    DP_DISP4 = OFF; 
 
-        DP_SEGMENTOA =  (DP_msgDisplay[digito]      & (uint8_t) 0x01);
-        DP_SEGMENTOB =  (DP_msgDisplay[digito] >> 1 & (uint8_t) 0x01);
-        DP_SEGMENTOC =  (DP_msgDisplay[digito] >> 2 & (uint8_t) 0x01);
-        DP_SEGMENTOD =  (DP_msgDisplay[digito] >> 3 & (uint8_t) 0x01);  
+    DP_SEGMENTOA =  (DP_msgDisplay[digito]      & (uint8_t) 0x01);
+    DP_SEGMENTOB =  (DP_msgDisplay[digito] >> 1 & (uint8_t) 0x01);
+    DP_SEGMENTOC =  (DP_msgDisplay[digito] >> 2 & (uint8_t) 0x01);
+    DP_SEGMENTOD =  (DP_msgDisplay[digito] >> 3 & (uint8_t) 0x01);  
     
-        switch(digito)
-        {
-            case DIGITO0:
-            	DP_DISP1 = ON; 
-                break;
-            case DIGITO1:
-                DP_DISP2 = ON;  
-                break;
-            case DIGITO2:
-                DP_DISP3 = ON; 
-                break;
-            case DIGITO3:
-                DP_DISP4 = ON; 
-                break;
-        }
-
-		// Incremento el indice del display
-		digito++;
-		digito %= DP_DIGITOS;
+    switch(digito)
+    {
+        case DIGITO0:
+         	DP_DISP1 = ON; 
+            break;
+        case DIGITO1:
+            DP_DISP2 = ON;  
+            break;
+        case DIGITO2:
+            DP_DISP3 = ON; 
+            break;
+        case DIGITO3:
+            DP_DISP4 = ON; 
+            break;
     }
+
+	// Incremento el indice del display
+	digito++;
+	digito %= DP_DIGITOS;
 }
 
 
@@ -135,9 +132,13 @@ void DP_BarridoDisplay (void)
 */
 void DP_Tic(void)
 {
-    DP_Delay--;
-    if(!DP_Delay)
+    if(DP_Delay)
     {
+        DP_Delay--;
+    }
+    else
+    {
+        DP_BarridoDisplay();
         DP_Delay = DP_TIC;
     }
 }

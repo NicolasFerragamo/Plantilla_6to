@@ -93,48 +93,44 @@
 
 void ED_Debounce (void)
 {
-    if (!ED_Delay)
-    {
-        uint8_t cambios = 0, j = 0;
-        // cambios me avisa si hay algun cambio, esto indica que hay alguna tecla presionada
-        // en J se guarda el estado de cada tecla, 1 bit por cada tecla
-        static uint8_t contador_estados[ED_ENTRADAS];
-        // aca se guarda el estado de la cuenta para validar la tecla
+    uint8_t cambios = 0, j = 0;
+    // cambios me avisa si hay algun cambio, esto indica que hay alguna tecla presionada
+    // en J se guarda el estado de cada tecla, 1 bit por cada tecla
+    static uint8_t contador_estados[ED_ENTRADAS];
+    // aca se guarda el estado de la cuenta para validar la tecla
 
-        j = !BOT1; 
-        j |= (uint8_t) (!BOT2 << (0x01));
-        j |= (uint8_t) (!BOT3 << (0x02));
-        j |= (uint8_t) (!BOT4 << (0x03));
+    j = !BOT1; 
+    j |= (uint8_t) (!BOT2 << (0x01));
+    j |= (uint8_t) (!BOT3 << (0x02));
+    j |= (uint8_t) (!BOT4 << (0x03));
      
-        cambios = ED_BufferEntradas ^ j ; // en cambios queda bit por bit los cambios registrados
-        // correspondentes a cada tecla precionada;
+    cambios = ED_BufferEntradas ^ j ; // en cambios queda bit por bit los cambios registrados
+    // correspondentes a cada tecla precionada;
 
-        if(cambios)
+    if(cambios)
         {
-            for(j=0; j < ED_ENTRADAS; j++)
+        for(j=0; j < ED_ENTRADAS; j++)
+        {
+            if(cambios & (0x01) << j)
             {
-                if(cambios & (0x01) << j)
+                contador_estados[j]++; 
+                if(contador_estados[j]== ED_ACEPTAR_ESTADO)
                 {
-                	contador_estados[j]++; 
-                	if(contador_estados[j]== ED_ACEPTAR_ESTADO)
-                	{
-                    	ED_BufferEntradas ^= (0x01 << j);
-                    	contador_estados[j] = 0;
-                    }
+                    ED_BufferEntradas ^= (0x01 << j);
+                   	contador_estados[j] = 0;
                 }
-                else
-                    contador_estados[j] = 0;
-            }   
-        }
-        else
-        {
-
-            for(j=0; j < ED_ENTRADAS; j++)
-            {
-            	contador_estados[j] = 0;
             }
-        }
+            else
+                contador_estados[j] = 0;
+        }   
+     }
+     else
+     {
 
+        for(j=0; j < ED_ENTRADAS; j++)
+        {
+          	contador_estados[j] = 0;
+        }
     }
 }
 
@@ -150,10 +146,14 @@ void ED_Debounce (void)
 */
 void ED_Tic (void)
 {
-    ED_Delay--;
     if(!ED_Delay)
     {
+        ED_Delay--;
+    }
+    else
+    {   
         ED_Delay = ED_TIC;
+        ED_Debounce ();
     }
 }
 

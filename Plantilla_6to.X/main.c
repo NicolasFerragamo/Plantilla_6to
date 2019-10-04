@@ -69,9 +69,6 @@ void main (void)
     ei ();           // Habilita las interrupciones globales
     while (1)
     { 
-      
-      //ED_Debounce();
-      //DP_BarridoDisplay();
       Aplicacion ();
     }
 }
