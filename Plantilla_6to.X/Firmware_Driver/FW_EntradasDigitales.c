@@ -146,7 +146,7 @@ void ED_Debounce (void)
 */
 void ED_Tic (void)
 {
-    if(!ED_Delay)
+    if(ED_Delay)
     {
         ED_Delay--;
     }
