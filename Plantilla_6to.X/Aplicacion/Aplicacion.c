@@ -16,7 +16,7 @@
 * Version	: 1.0.0					
 * Programmer(s) : NEF
 **********************************************************************************************************
-*  Note(s): Es este archivo deve escribir el código de su programa
+*  Note(s): Es este archivo debe escribir el código de su programa
 *
 *
 *
