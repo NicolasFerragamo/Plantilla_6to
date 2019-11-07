@@ -105,5 +105,6 @@ void Tmr1_Init(void)
     PIR1bits.TMR1IF   = 0;     /*flag de interrupción borrado */
     PIE1bits.TMR1IE   = ON;     /*interrupción de timer 1 habilitada */
     INTCONbits.PEIE   = ON;     /*Interrupciones de perifericos habilitadas */
+    T1CONbits.TMR1ON  = ON;     /*apago el timer */
     
 }

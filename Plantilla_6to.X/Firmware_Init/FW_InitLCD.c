@@ -119,6 +119,8 @@ extern volatile uint8_t LCD_Tout;
 */
 void LCD_Init(void)
 {
+    uint16_t aux = 0;
+    
     LCD_BUS_DIR     & = LCD_SALIDA;	// Hace el bus salida para escribir en el LCD
     LCD_RS_BUS_DIR    = 0;
     LCD_RW_BUS_DIR    = 0;
@@ -126,27 +128,35 @@ void LCD_Init(void)
         
 
 	LCD_Tout = 30;          // Espera 30 interrup de timer
-	while (LCD_Tout);
-
+	//while (LCD_Tout);
+    for(aux=0; aux<65000; aux++);
+    for(aux=0; aux<65000; aux++);
+    for(aux=0; aux<65000; aux++);
+    
 	LCD_WriteCMD (0x02);        // trabajar en 4bits 0010****
 	LCD_Tout = 1;		// Al menos 50uS 
-	while (LCD_Tout);	// Espera acá hasta que LCD_tout se hace 0
+	//while (LCD_Tout);	// Espera acá hasta que LCD_tout se hace 0
+    for(aux=0; aux<65000; aux++);
 
 	LCD_WriteCMD (0x28);	// 4 bits 2 lineas caracter 5*8
 	LCD_Tout = 1;
-	while (LCD_Tout);
-
+	//while (LCD_Tout);
+    for(aux=0; aux<65000; aux++);
+    
 	LCD_WriteCMD (0x0C);        //disp ON Cursor OFF Blink OFF
 	LCD_Tout = 1;
-	while (LCD_Tout);
+	//while (LCD_Tout);
+    for(aux=0; aux<65000; aux++);
 
 	LCD_WriteCMD (0x01);        // borra el display
 	LCD_Tout = 1;
-	while (LCD_Tout);
+	//while (LCD_Tout);
+    for(aux=0; aux<65000; aux++);
 
 	LCD_WriteCMD (0x06);        //Incrementar la pos auto SCROLL OFF
 	LCD_Tout = 1;
-	while (LCD_Tout);
+	//while (LCD_Tout);
+    for(aux=0; aux<65000; aux++);
 
 	LCD_ReadBusy ();												// Esta rutina lee el bit de busy a ver si el LCD se liberó..
 }
